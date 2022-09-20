@@ -1,0 +1,13 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    {
+      "source": "^/BYD_QA/(.*)$",
+      "target": "$1",
+      "destination": "BYD_QA",
+      "authenticationType": "none",
+      "csrfProtection": false
+    }
+  ]
+}

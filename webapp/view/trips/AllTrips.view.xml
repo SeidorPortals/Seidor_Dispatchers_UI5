@@ -1,0 +1,99 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.trips.AllTrips" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <table:Table id="tAllTrips" rows="{/mDataTrips}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" visibleRowCount="14" ariaLabelledBy="title">
+            <table:extension>
+                <OverflowToolbar id="idOT">
+                    <ToolbarSpacer id="idTS"/>
+                    <SearchField id="idSearchManifiesto" placeholder="Buscar" value="{ui>/filterValue}" search="onHandleTxtFilter($event, 'idSearchManifiesto')" width="20rem"/>
+                    <Button id="idBtnAddTrip" icon="sap-icon://add" press="onCreateTrip" tooltip="Add">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLAddTrip" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="idBtnEditTrip" icon="sap-icon://edit" press="onEditTrip" tooltip="Edit">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLEditTrip" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="idBtnCopyTrip" icon="sap-icon://copy" press="onCopyTrip" tooltip="Copy">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLCopyTrip" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="btnDownloadExcelTrip" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        </layoutData>         
+                    </Button>
+                </OverflowToolbar>
+            </table:extension>
+            <table:noData>
+                <Link id="idLink" class="sapUiMediumMargin" text="No se encuentran datos"/>
+            </table:noData>
+            <table:columns>
+                <table:Column id="idColumnId" width="auto" filterProperty="ID">
+                    <Label id="idLabelId" text="ID"/>
+                    <table:template>
+                        <Link id="idLabelTextId" text="{ID}" press="onViewTrip"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnCompany" filterProperty="COMPANY">
+                    <Label id="idLabelName" text="Company"/>
+                    <table:template>
+                        <Label id="idLabelTextCompany" text="{COMPANY}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnCarrier" filterProperty="CARRIER">
+                    <Label id="idLabelCarrier" text="Carrier"/>
+                    <table:template>
+                        <Label id="idLabelTextCarrier" text="{CARRIER}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnCustomer" filterProperty="CUSTOMER">
+                    <Label id="idLabelCustomer" text="Customer"/>
+                    <table:template>
+                        <Label id="idLabelTextCustomer" text="{CUSTOMER}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnNShipper" filterProperty="SHIPPER">
+                    <Label id="idLabelNShipper" text="Shipper"/>
+                    <table:template>
+                        <Label id="idLabelTextShipper" text="{SHIPPER}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnCustomerPo" filterProperty="CUSTOMER_PO">
+                    <Label id="idLabelCustomerPo" text="Customer PO #"/>
+                    <table:template>
+                        <Label id="idLabelTextCustomerPo" text="{CUSTOMER_PO}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnSalesMan" filterProperty="SALES_MAN">
+                    <Label id="idLabelSalesMan" text="Sales Man"/>
+                    <table:template>
+                        <Label id="idLabelTextSalesMan" text="{SALES_MAN}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnDelivery" filterProperty="DELIVERY">
+                    <Label id="idLabelDelivery" text="Delivery"/>
+                    <table:template>
+                        <Label id="idLabelTextDelivery" text="{DELIVERY}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="idColumnCost" width="6em" filterProperty="COST">
+                    <Label id="idLabelCost" text="Cost"/>
+                    <table:template>
+                        <Label id="idLabelTextCost" text="{COST}"/>
+                    </table:template>
+                </table:Column>
+            </table:columns>
+        </table:Table>
+    </App>
+</mvc:View>

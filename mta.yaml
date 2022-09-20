@@ -1,0 +1,94 @@
+_schema-version: "3.2"
+ID: com-seidor-usa-dispatchers
+description: A Seidor application for dispatchers
+version: 0.0.1
+modules:
+- name: com-seidor-usa-dispatchers-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: com-seidor-usa-dispatchers-destination-service
+    parameters:
+      content-target: true
+  - name: com-seidor-usa-dispatchers-repo-host
+    parameters:
+      service-key:
+        name: com-seidor-usa-dispatchers-repo-host-key
+  - name: com-seidor-usa-dispatchers-uaa
+    parameters:
+      service-key:
+        name: com-seidor-usa-dispatchers-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: com-seidor-usa-dispatchers_html_repo_host
+          ServiceInstanceName: com-seidor-usa-dispatchers-html5-srv
+          ServiceKeyName: com-seidor-usa-dispatchers-repo-host-key
+          sap.cloud.service: com-seidor-usa-dispatchers
+        - Authentication: OAuth2UserTokenExchange
+          Name: com-seidor-usa-dispatchers_uaa
+          ServiceInstanceName: com-seidor-usa-dispatchers-xsuaa-srv
+          ServiceKeyName: com-seidor-usa-dispatchers-uaa-key
+          sap.cloud.service: com-seidor-usa-dispatchers
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+- name: com-seidor-usa-dispatchers-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: com-seidor-usa-dispatchers-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - comseidorusadispatchers.zip
+      name: comseidorusadispatchers
+      target-path: resources/
+- name: comseidorusadispatchers
+  type: html5
+  path: .
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: com-seidor-usa-dispatchers-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: com-seidor-usa-dispatchers-destination-service
+    service-plan: lite
+- name: com-seidor-usa-dispatchers-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: com-seidor-usa-dispatchers-xsuaa-srv
+    service-plan: application
+- name: com-seidor-usa-dispatchers-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: com-seidor-usa-dispatchers-html5-srv
+    service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true

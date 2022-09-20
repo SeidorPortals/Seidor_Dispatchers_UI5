@@ -1,0 +1,50 @@
+<mvc:View 
+    controllerName="com.seidor.usa.dispatchers.controller.Main"
+    displayBlock="true"
+    heigth="100%"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.m">
+    <tnt:ToolPage id="idToolPage">
+        <tnt:header>
+            <tnt:ToolHeader id="idToolHeader">
+				<Button id="btnSideNavigationToggle" icon="sap-icon://menu" type="Transparent" press="onSideNavButtonPress" tooltip="Ocultar Menu">
+					<layoutData>
+						<OverflowToolbarLayoutData id="idOTLD" priority="NeverOverflow"/>
+					</layoutData>
+				</Button>
+				<Image id="idImage" src="./image/seidor.png" width="4%" tooltip="Logo Seidor"/>
+				<ToolbarSpacer id="idTS" width="20px"/>
+				<Text id="idT" text="{i18n>title}"/>
+			</tnt:ToolHeader>
+        </tnt:header>
+        <tnt:sideContent>
+			<tnt:SideNavigation id="idSN" expanded="true" selectedKey="{/selectedKey}" itemSelect="onItemSelect">
+				<tnt:NavigationList id="idNL" items="{path: '/navigation'}">
+					<tnt:NavigationListItem id="idNLI" text="{title}" icon="{icon}" visible="{visible}" expanded="{expanded}" items="{items}" key="{key}">
+						<tnt:NavigationListItem id="idNLI2" text="{title}" key="{key}"/>
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList id="idNL2" items="{path: '/fixedNavigation', templateShareable: true}">
+						<tnt:NavigationListItem id="idNLI3" text="{title}" icon="{icon}" enabled="{enabled}" expanded="{expanded}" items="{items}" key="{key}">
+							<tnt:NavigationListItem id="idNLI4" text="{title}" key="{key}" enabled="{enabled}"/>
+						</tnt:NavigationListItem>
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer" initialPage="initialPage" afterNavigate="onNavigate">
+				<pages>
+					<ScrollContainer id="initialPage" horizontal="true" vertical="true" height="100%">
+						<mvc:XMLView id="idXMLVPage1" viewName="com.seidor.usa.dispatchers.view.InitialPage"/>
+					</ScrollContainer>
+					<ScrollContainer id="tripsPage" horizontal="true" vertical="true" height="100%">
+						<mvc:XMLView id="idXMLVPage2" viewName="com.seidor.usa.dispatchers.view.TripsPage"/>
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>
