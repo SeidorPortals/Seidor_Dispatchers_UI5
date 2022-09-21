@@ -17,7 +17,7 @@
                     <Button id="btnPreviousTrip" icon="sap-icon://media-reverse" press="onPreviousAndNextTrip('previous')" type="Default" tooltip="{i18n>before}"/>
                     <Button id="btnNextTrip" icon="sap-icon://media-play" press="onPreviousAndNextTrip('next')" type="Default" tooltip="{i18n>next}"/>
                 </Toolbar>
-                <Panel id="pTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo}">
+                <Panel id="pTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo} {/mTripSelected/ID}">
                     <f:SimpleForm id="sfViewTrip"
                         editable="false"
                         layout="ColumnLayout"
@@ -78,7 +78,7 @@
                             <table:Column width="auto" filterProperty="Number">
                                 <Label id="idLabelId" text="Number"/>
                                 <table:template>
-                                    <Link id="idLabelTextId" text="{Number}" press="onViewTrip"/>
+                                    <Link id="idLabelTextId" text="{Number}" press="onViewShipment"/>
                                 </table:template>
                             </table:Column>
                             <table:Column width="auto" filterProperty="Customer">
@@ -139,13 +139,13 @@
                                     columnsXL="3">
                                     <f:content>
                                         <core:Title text="{i18n>specialInstruction}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}"/>
+                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}" editable="false"/>
                                         <core:Title text="{i18n>notesCarrier}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/NotesToCarries}"/>
+                                        <TextArea rows="3" value="{/mTripSelected/NotesToCarries}" editable="false"/>
                                         <Label text="{i18n>notificationEmail}"/>
                                         <Text text="{/mTripSelected/CarrierNotificationEmail}"/>
                                         <core:Title text="{i18n>generalNotes}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/GeneralNotes}"/>
+                                        <TextArea rows="3" value="{/mTripSelected/GeneralNotes}" editable="false"/>
                                         <Label text="{i18n>agentEmail}"/>
                                         <Text text="{/mTripSelected/AgentEmail}"/>
                                     </f:content>

@@ -1,0 +1,13 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.CarriersPage" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <Text text="Pagina de prueba"/>
+    </App>
+</mvc:View>

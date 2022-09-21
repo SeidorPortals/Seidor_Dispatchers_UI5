@@ -10,13 +10,19 @@
             "icon": "sap-icon://instance",
             "key": "tripsPage",
             "visible" : true
+        },{
+            "title": "Carriers",
+            "icon": "sap-icon://account",
+            "key": "carriersPage",
+            "visible" : true
         }
     ],
     "mPropertyTrips" : {
         "vTabAll" : true,
-        "vTabCreate" : false,
-        "vTabView" : false,
-        "edit" : false
+        "vTabCreate" : true,
+        "vTabView" : true,
+        "edit" : false,
+        "vTabShipment" : true
     },
     "mDataTrips" : [
             {

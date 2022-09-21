@@ -23,6 +23,7 @@ sap.ui.define([
             this._getModel().setProperty("/mPropertyTrips/vTabAll", true);
             this._getModel().setProperty("/mPropertyTrips/vTabCreate", false);
             this._getModel().setProperty("/mPropertyTrips/vTabView", false);
+            this._getModel().setProperty("/mPropertyTrips/vTavShipment", false);
         },
 
         onViewTrip: function () {

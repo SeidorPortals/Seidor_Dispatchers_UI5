@@ -1,16 +1,15 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller"
-], function(Controller) {
+], function (Controller){
     'use strict';
-
-    return Controller.extend("com.seidor.usa.dispatchers.controller.trips.EditTrip", {
-        onInit: function() {},
-
-        onBackReport: function() {
-            this._getModel().setProperty("/mPropertyTrips/vTabAll", true);
-            this._getModel().setProperty("/mPropertyTrips/vTabCreate", false);
-            this._getModel().setProperty("/mPropertyTrips/vTabView", false);
-            this._getModel().setProperty("/mPropertyTrips/vTavShipment", false);
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trips.ViewShipment", {
+        onInit: function(){},
+        onBackReport: function(){
+            let oModel = this._getModel();
+            oModel.setProperty("/mPropertyTrips/vTabAll", false);
+            oModel.setProperty("/mPropertyTrips/vTabCreate", false);
+            oModel.setProperty("/mPropertyTrips/vTabView", true);
+            oModel.setProperty("/mPropertyTrips/vTabShipment", false);
         },
 
 		/* _getModel

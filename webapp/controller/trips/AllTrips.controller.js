@@ -15,6 +15,7 @@ sap.ui.define([
             this._getModel().setProperty("/mPropertyTrips/vTabAll", false);
             this._getModel().setProperty("/mPropertyTrips/vTabCreate", true);
             this._getModel().setProperty("/mPropertyTrips/vTabView", false);
+            this._getModel().setProperty("/mPropertyTrips/vTabShipment", false);
         },
 
         onEditTrip: function() {
@@ -27,6 +28,7 @@ sap.ui.define([
                 oModel.setProperty("/mPropertyTrips/vTabAll", false);
                 oModel.setProperty("/mPropertyTrips/vTabCreate", true);
                 oModel.setProperty("/mPropertyTrips/vTabView", false);
+                oModel.setProperty("/mPropertyTrips/vTabShipment", false);
             }else{
                 MessageBox.warning("Select a record.")
             }            
@@ -42,6 +44,7 @@ sap.ui.define([
                 oModel.setProperty("/mPropertyTrips/vTabAll", false);
                 oModel.setProperty("/mPropertyTrips/vTabCreate", false);
                 oModel.setProperty("/mPropertyTrips/vTabView", true);
+                oModel.setProperty("/mPropertyTrips/vTabShipment", false);
             }
         },
 

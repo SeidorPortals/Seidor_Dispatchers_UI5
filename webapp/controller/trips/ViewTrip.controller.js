@@ -11,7 +11,16 @@ sap.ui.define([
             oModel.setProperty("/mPropertyTrips/vTabAll", true);
             oModel.setProperty("/mPropertyTrips/vTabCreate", false);
             oModel.setProperty("/mPropertyTrips/vTabView", false);
-            oModel.setProperty("/mTripSelected", {});
+            oModel.setProperty("/mPropertyTrips/vTabShipment", false);
+            oModel.setProperty("/mTripSelected", {}); 
+        },
+
+        onViewShipment: function() {
+            let oModel = this._getModel();
+            oModel.setProperty("/mPropertyTrips/vTabAll", false);
+            oModel.setProperty("/mPropertyTrips/vTabCreate", false);
+            oModel.setProperty("/mPropertyTrips/vTabView", false);
+            oModel.setProperty("/mPropertyTrips/vTabShipment", true);
         },
 
         onEditTrip: function() {

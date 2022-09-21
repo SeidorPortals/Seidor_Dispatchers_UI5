@@ -21,6 +21,9 @@
                         <IconTabFilter id="idTabViewTrip" icon="sap-icon://approvals" visible="{/mPropertyTrips/vTabView}">
                             <mvc:XMLView id="xmlViewViewTrips" viewName="com.seidor.usa.dispatchers.view.trips.ViewTrip"/>
                         </IconTabFilter>
+                        <IconTabFilter id="idTabViewShipment" icon="sap-icon://shipping-status" visible="{/mPropertyTrips/vTabShipment}">
+                            <mvc:XMLView id="xmlViewViewShipment" viewName="com.seidor.usa.dispatchers.view.trips.ViewShipment"/>
+                        </IconTabFilter>
                     </items>
                 </IconTabBar>
 			</Page>
