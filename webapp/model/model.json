@@ -19,10 +19,10 @@
     ],
     "mPropertyTrips" : {
         "vTabAll" : true,
-        "vTabCreate" : true,
-        "vTabView" : true,
+        "vTabCreate" : false,
+        "vTabView" : false,
         "edit" : false,
-        "vTabShipment" : true
+        "vTabShipment" : false
     },
     "mDataTrips" : [
             {
@@ -55,59 +55,10 @@
             "SALES_MAN" : "Denise Smith",
             "DELIVERY" : "11/15/21",
             "COST" : 12897
-        },{
-            "ID" : "1000004",
-            "COMPANY" : "Jologa",
-            "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
-            "CUSTOMER" : "J.B HUNT",
-            "SHIPPER" : "PLASTIC EXPRESS POOLER GA",
-            "CUSTOMER_PO" : "214479",
-            "SALES_MAN" : "Denise Smith",
-            "DELIVERY" : "11/15/21",
-            "COST" : 12897
-        },{
-            "ID" : "1000005",
-            "COMPANY" : "Jologa",
-            "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
-            "CUSTOMER" : "J.B HUNT",
-            "SHIPPER" : "PLASTIC EXPRESS POOLER GA",
-            "CUSTOMER_PO" : "214479",
-            "SALES_MAN" : "Denise Smith",
-            "DELIVERY" : "11/15/21",
-            "COST" : 12897
-        },{
-            "ID" : "1000006",
-            "COMPANY" : "Jologa",
-            "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
-            "CUSTOMER" : "J.B HUNT",
-            "SHIPPER" : "PLASTIC EXPRESS POOLER GA",
-            "CUSTOMER_PO" : "214479",
-            "SALES_MAN" : "Denise Smith",
-            "DELIVERY" : "11/15/21",
-            "COST" : 12897
-        },{
-            "ID" : "1000007",
-            "COMPANY" : "Jologa",
-            "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
-            "CUSTOMER" : "J.B HUNT",
-            "SHIPPER" : "PLASTIC EXPRESS POOLER GA",
-            "CUSTOMER_PO" : "214479",
-            "SALES_MAN" : "Denise Smith",
-            "DELIVERY" : "11/15/21",
-            "COST" : 12897
-        },{
-            "ID" : "1000008",
-            "COMPANY" : "Jologa",
-            "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
-            "CUSTOMER" : "J.B HUNT",
-            "SHIPPER" : "PLASTIC EXPRESS POOLER GA",
-            "CUSTOMER_PO" : "214479",
-            "SALES_MAN" : "Denise Smith",
-            "DELIVERY" : "11/15/21",
-            "COST" : 12897
         }
     ],
     "mTripSelected" : {},
+    "mShipmentSelected" : {},
     "mDataTripsAll":[
         {
             "ID" : "1000001",

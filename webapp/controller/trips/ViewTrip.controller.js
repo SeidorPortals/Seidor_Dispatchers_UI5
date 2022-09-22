@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function(Controller){
+    "sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox"
+], function(Controller, MessageBox){
     'use strict';
 
     return Controller.extend("com.seidor.usa.dispatchers.controller.trips.ViewTrip", {
@@ -25,6 +26,26 @@ sap.ui.define([
 
         onEditTrip: function() {
             debugger;
+        },
+
+        onPreviousAndNextTrip: function(action) {
+            debugger;
+            var oModel = this._getModel();
+            let index = oModel.getProperty("/mDataTripsAll").indexOf(oModel.getProperty("/mTripSelected"));
+            if(action === "previous") {
+                index --;
+            }else{
+                index ++;
+            }
+            if(index > -1){
+                if(index < oModel.getProperty("/mDataTripsAll").length){
+                    oModel.setProperty("/mTripSelected", oModel.getProperty("/mDataTripsAll")[index])
+                }else{
+                    MessageBox.alert("No more records");
+                }
+            }else{
+                MessageBox.alert("No more records");
+            }
         },
 
 		/* _getModel

@@ -8,9 +8,15 @@
 	xmlns="sap.m" 
 	class="sapUiSizeCompact">
     <App>
-        <Button press="onBackReport"/>
-        <Page title="{i18n>shipmentInfo}">
-            <Panel>
+        <Page showHeader="false">
+            <Toolbar id="idToolbar">
+                <Button id="btnBackReport" type="Back" press="onBackReport"/>
+                <ToolbarSpacer />
+                <Button id="btnEditShipment" icon="sap-icon://edit" press="onEditShipment"/>
+                <Button id="btnPreviousShipment" icon="sap-icon://media-reverse" press="onPreviousAndNextShipment('previous')" type="Default" tooltip="{i18n>before}"/>
+                <Button id="btnNextShipment" icon="sap-icon://media-play" press="onPreviousAndNextShipment('next')" type="Default" tooltip="{i18n>next}"/>
+            </Toolbar>
+            <Panel headerText="{i18n>shipmentInfo} ">
             </Panel>
             <Panel>
             </Panel>
