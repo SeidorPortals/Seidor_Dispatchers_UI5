@@ -31,35 +31,7 @@
         "edit" : false
     },
     
-    "mDataCarriers" : [
-        {
-        "CBP_UUID": "1000903",
-        "TBP_UUID": "2K CARRIER INC",
-        "CFRMTD_PSTL_ADDR": "2350 ROCKAWAY INDUSTRIAL BOULEVARD / CONYERS GA 30012 / US",
-        "CPHONE_NR": "",
-        "CEMAIL_URI": "",
-        "CCOUNTRY_CODE": "US",
-        "TCOUNTRY_CODE": "United States",
-        "VANS": "1", 
-        "REEFER": "0", 
-        "FLATBED": "0", 
-        "STEPDECK": "0"        
-        
-    },{
-        "CBP_UUID": "20000",
-        "TBP_UUID": "CARRIER",
-        "CFRMTD_PSTL_ADDR": "2350 ROCKAWAY INDUSTRIAL BOULEVARD / CONYERS GA 30012 / US",
-        "CPHONE_NR": "702 7895-4652",
-        "CEMAIL_URI": "",
-        "CCOUNTRY_CODE": "US",
-        "TCOUNTRY_CODE": "United States",    
-        "EQUIPMENTTYPE": "None", 
-        "VANS": "1", 
-        "REEFER": "0", 
-        "FLATBED": "0", 
-        "STEPDECK": "0" 
-    }
-],
+    "mDataCarriers" : [],
     "mCarrierSelected" : {},
     "mDataTrips" : [
             {
