@@ -13,7 +13,7 @@
 						<OverflowToolbarLayoutData id="idOTLD" priority="NeverOverflow"/>
 					</layoutData>
 				</Button>
-				<Image id="idImage" src="./image/seidor.png" width="4%" tooltip="Logo Seidor"/>
+				<Image id="idImage" src="./image/UTB.png" width="4%" tooltip="Logo Seidor"/>
 				<ToolbarSpacer id="idTS" width="20px"/>
 				<Text id="idT" text="{i18n>title}"/>
 			</tnt:ToolHeader>
@@ -40,7 +40,7 @@
 					<ScrollContainer id="initialPage" horizontal="true" vertical="true" height="100%">
 						<mvc:XMLView id="idXMLVPage1" viewName="com.seidor.usa.dispatchers.view.InitialPage"/>
 					</ScrollContainer>
-					<ScrollContainer id="tripsPage" horizontal="true" vertical="true" height="100%">
+                    <ScrollContainer id="tripsPage" horizontal="true" vertical="true" height="100%">
 						<mvc:XMLView id="idXMLVPage2" viewName="com.seidor.usa.dispatchers.view.TripsPage"/>
 					</ScrollContainer>
                     <ScrollContainer id="carriersPage" horizontal="true" vertical="true" height="100%">

@@ -12,14 +12,18 @@ sap.ui.define([
         },
 
         onCreateTrip: function() {
+            MessageBox.information("In process...");
+            /*
             this._getModel().setProperty("/mPropertyTrips/vTabAll", false);
             this._getModel().setProperty("/mPropertyTrips/vTabCreate", true);
             this._getModel().setProperty("/mPropertyTrips/vTabView", false);
             this._getModel().setProperty("/mPropertyTrips/vTabShipment", false);
+            */
         },
 
         onEditTrip: function() {
-            debugger;
+            MessageBox.information("In process...");
+            /*
             let oModel = this._getModel();
             let _itemSelected = this.byId("tAllTrips").getSelectedIndex();
             if(_itemSelected !== -1){
@@ -31,7 +35,8 @@ sap.ui.define([
                 oModel.setProperty("/mPropertyTrips/vTabShipment", false);
             }else{
                 MessageBox.warning("Select a record.")
-            }            
+            }
+            */            
         },
 
         onViewTrip: function(oEvent) {

@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function(Controller){
+    "sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox"
+], function(Controller, MessageBox){
     'use strict';
 
     return Controller.extend("com.seidor.usa.dispatchers.controller.trips.ViewTrip", {
@@ -15,16 +16,41 @@ sap.ui.define([
             oModel.setProperty("/mTripSelected", {}); 
         },
 
-        onViewShipment: function() {
+        onViewShipment: function(oEvent) {
             let oModel = this._getModel();
-            oModel.setProperty("/mPropertyTrips/vTabAll", false);
-            oModel.setProperty("/mPropertyTrips/vTabCreate", false);
-            oModel.setProperty("/mPropertyTrips/vTabView", false);
-            oModel.setProperty("/mPropertyTrips/vTabShipment", true);
+            const _shipmentSelected = oModel.getProperty("/mTripSelected/Shipments").find(x => x.Number === oEvent.getSource().getProperty("text"));
+            if(_shipmentSelected === undefined) {
+                MessageBox.error("No Found Data.");
+            }else{
+                oModel.setProperty("/mShipmentSelected", _shipmentSelected);
+                oModel.setProperty("/mPropertyTrips/vTabAll", false);
+                oModel.setProperty("/mPropertyTrips/vTabCreate", false);
+                oModel.setProperty("/mPropertyTrips/vTabView", false);
+                oModel.setProperty("/mPropertyTrips/vTabShipment", true);
+            }
         },
 
         onEditTrip: function() {
             debugger;
+        },
+
+        onPreviousAndNextTrip: function(action) {
+            var oModel = this._getModel();
+            let index = oModel.getProperty("/mDataTripsAll").indexOf(oModel.getProperty("/mTripSelected"));
+            if(action === "previous") {
+                index --;
+            }else{
+                index ++;
+            }
+            if(index > -1){
+                if(index < oModel.getProperty("/mDataTripsAll").length){
+                    oModel.setProperty("/mTripSelected", oModel.getProperty("/mDataTripsAll")[index])
+                }else{
+                    MessageBox.alert("No more records");
+                }
+            }else{
+                MessageBox.alert("No more records");
+            }
         },
 
 		/* _getModel
