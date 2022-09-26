@@ -27,9 +27,10 @@ sap.ui.define([
                 Util._showBI(true);
                 var oParameters = oEvent.getParameters();
                 clearInterval(this.timer);
-                this.timer = setInterval(function () {
-                    that.onNavigateWait(oParameters);
-                }, 1000);
+                //this.timer = setInterval(function () {
+                //    that.onNavigateWait(oParameters);
+                //}, 1000);
+                this.onNavigateWait(oParameters);
             },
     
             onNavigateWait: function (oParameters) {

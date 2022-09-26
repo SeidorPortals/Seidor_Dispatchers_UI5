@@ -15,7 +15,7 @@ sap.ui.define([
 		beforeNavigate: function(offBI) {
             this.oModel = this._getModel();
 			if(offBI){
-				util._showBI(false);
+				Util._showBI(false);
 			}
 		},
 

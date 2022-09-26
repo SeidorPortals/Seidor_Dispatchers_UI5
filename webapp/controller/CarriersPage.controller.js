@@ -1,17 +1,51 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller"
-], function (Controller) {
+	"sap/ui/core/mvc/Controller",
+	"com/seidor/usa/dispatchers/util/Util",
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/model/Filter",
+], function (Controller, Util) {
 	"use strict";
 	
     return Controller.extend("com.seidor.usa.dispatchers.controller.CarriersPage", {
-        onInit: function(){},
+        ByDCarrier : "/BYD_QA",
+
+        onInit: function(){            
+        },
         
         beforeNavigate: function(offBI) {
             this.oModel = this._getModel();
-			if(offBI){
-				util._showBI(false);
-			}
+			//if(offBI){
+			//	Util._showBI(false);
+			//}
+            this.onUsageServiceCarrier();
 		},
+
+        onBackReport: function() {
+            this._getModel().setProperty("/mPropertyCarriers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyCarriers/vTabCreate", false);            
+        },
+        
+        onUsageServiceCarrier: function(){
+            Util._showBI(true);
+            var that = this;
+            jQuery.ajax({
+                async: false,
+                url: `${this.ByDCarrier}/ana_businessanalytics_analytics.svc/RPYL6NCENUY_960B250DF24D8BQueryResults?$format=json`,
+                method: "GET",
+                dataType : "json",
+                headers: {
+                    Authorization: "Basic bGFyZ3VlZGFzOlNlaWRvcjIz"
+                },
+                success: function (oData) {
+                    that._getModel().setProperty("/mDataCarriers",oData.d.results);
+                    console.log("OK");
+                },
+                error: function (err) {
+                    console.error(err);
+                }
+            });
+            Util._showBI(false);
+        },
 		
 		/* _getCore
 		 * @returns {sap.ui.core} the core instance

@@ -8,6 +8,19 @@
 	xmlns="sap.m" 
 	class="sapUiSizeCompact">
     <App>
-        <Text text="Pagina de prueba"/>
+        <pages>
+			<Page id="idPage" title="Carrier">
+                <IconTabBar id="idIconTabBarCarrier" class="sapUiContentPadding" expandable="false">
+                    <items>
+                        <IconTabFilter id="idTabAllCarrier" icon="sap-icon://instance" visible="{/mPropertyCarriers/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllCarrier" viewName="com.seidor.usa.dispatchers.view.carriers.AllCarriers"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateCarrier" icon="sap-icon://create-form" visible="{/mPropertyCarriers/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditCarrier" viewName="com.seidor.usa.dispatchers.view.carriers.EditCarrier"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+			</Page>
+		</pages>
     </App>
 </mvc:View>
