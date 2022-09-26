@@ -7,7 +7,7 @@
 	xmlns:f="sap.ui.layout.form" 
 	xmlns="sap.m" 
 	class="sapUiSizeCompact">
-    <App>
+    <App ScrollContainer="false">
         <pages>
             <Page showHeader="false">
                 <Toolbar id="idToolbar">
@@ -55,7 +55,7 @@
                     </f:SimpleForm>
                 </Panel>
                 <Panel id="pShipments" class="sapUiSmallMargin" headerText="{i18n>shipments}">
-                    <table:Table id="tShipmentsTrips" rows="{/mTripSelected/Shipments}" visibleRowCount="{= ${/mTripSelected/Shipments}.length}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" ariaLabelledBy="title">
+                    <table:Table id="tShipmentsTrips" rows="{/mTripSelected/Shipments}" visibleRowCount="{= ${/mTripSelected/Shipments}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                         <table:extension>
                             <OverflowToolbar id="idOTShipments">
                                 <ToolbarSpacer id="idTSShipments"/>

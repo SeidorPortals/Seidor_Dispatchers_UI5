@@ -16,13 +16,207 @@
                 <Button id="btnPreviousShipment" icon="sap-icon://media-reverse" press="onPreviousAndNextShipment('previous')" type="Default" tooltip="{i18n>before}"/>
                 <Button id="btnNextShipment" icon="sap-icon://media-play" press="onPreviousAndNextShipment('next')" type="Default" tooltip="{i18n>next}"/>
             </Toolbar>
-            <Panel headerText="{i18n>shipmentInfo} ">
+            <Panel id="pShipmentInformation" class="sapUiSmallMargin" headerText="{i18n>shipmentInfo} {/mShipmentSelected/Number}">
+                <f:SimpleForm id="sfViewTrip"
+                    editable="false"
+                    layout="ColumnLayout"
+                    showHeader="false"
+                    columnsM="2"
+                    columnsL="3"
+                    columnsXL="4">
+                    <f:content>
+                        <Label text="{i18n>customer}" />
+                        <Text text="{/mShipmentSelected/Customer}"/>
+                        <Label text="{i18n>bilingEmail}" />
+                        <Text text="{/mShipmentSelected/CustomerEmail}"/>
+                        <Label text="{i18n>carrier}" />
+                        <Text text="{/mShipmentSelected/CustomerEmail}"/>
+                        <Label text="{i18n>customerPo}" />
+                        <Text text="{/mShipmentSelected/CustomerPo}"/>
+                        <Label text="{i18n>carrier}" />
+                        <Text text="{/mTripSelected/Carrier}"/>
+                        <Label text="{i18n>notificationEmail}" />
+                        <Text text="{/mTripSelected/CarrierNotificationEmail}"/>
+                        <Label text="{i18n>pieces}" />
+                        <Text text="{/mShipmentSelected/Pieces}"/>
+                        <Label text="{i18n>weigth}" />
+                        <Text text="{/mShipmentSelected/Weigth}"/>
+                    </f:content>
+                </f:SimpleForm>
             </Panel>
-            <Panel>
+            <Panel id="pPickUpsShipment" class="sapUiSmallMargin" headerText="{i18n>pickUps}">
+                <table:Table id="tPickUpsShipment" rows="{/mShipmentSelected/PickUp}" visibleRowCount="{= ${/mShipmentSelected/PickUp}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
+                    <table:extension>
+                        <OverflowToolbar id="otPickUps">
+                            <ToolbarSpacer id="tsPickUps"/>
+                            <Button id="btnAddPickUp" icon="sap-icon://add" press="onCreatePickup" tooltip="Add">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLAdddPickup" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                            <Button id="btnEditPickUp" icon="sap-icon://edit" press="onEditPickup" tooltip="Edit">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLEditPickup" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                        </OverflowToolbar>
+                    </table:extension>
+                    <table:noData>
+                        <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
+                    </table:noData>
+                    <table:columns>
+                        <table:Column width="auto" filterProperty="IdPickup">
+                            <Label text="{i18n>pickup}"/>
+                            <table:template>
+                                <Link text="{IdPickup}" pres="onViewPickup"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto" filterProperty="Shipper">
+                            <Label text="{i18n>shipper}"/>
+                            <table:template>
+                                <Text text="{Shipper}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto">
+                            <Label text="{i18n>pcsWeigth}"/>
+                            <table:template>
+                                <Text text="{PCs} / {Weigth}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column filterProperty="PickupRef">
+                            <Label text="{i18n>ref}"/>
+                            <table:template>
+                                <Text text="{PickupRef}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column filterProperty="PickupDate">
+                            <Label text="{i18n>date}"/>
+                            <table:template>
+                                <Text text="{PickupDate}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto" filterProperty="PickupEPU">
+                            <Label text="{i18n>epu}"/>
+                            <table:template>
+                                <Text text="{PickupEPU}"/>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
             </Panel>
-            <Panel>
+            <Panel id="pDeliveriesShipment" class="sapUiSmallMargin" headerText="{i18n>deliveries}">
+                <table:Table id="tDeliveryShipment" rows="{/mShipmentSelected/DeliveryData}" visibleRowCount="{= ${/mShipmentSelected/DeliveryData}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
+                    <table:extension>
+                        <OverflowToolbar id="otDeliveries">
+                            <ToolbarSpacer id="tsDeliveries"/>
+                            <Button id="btnAddDelivery" icon="sap-icon://add" press="onCreateDelivery" tooltip="Add">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLAddDelivery" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                            <Button id="btnEditDelivery" icon="sap-icon://edit" press="onEditDelivery" tooltip="Edit">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLEditDelivery" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                        </OverflowToolbar>
+                    </table:extension>
+                    <table:noData>
+                        <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
+                    </table:noData>
+                    <table:columns>
+                        <table:Column width="auto" filterProperty="IdDelivery">
+                            <Label text="{i18n>delivery}"/>
+                            <table:template>
+                                <Link text="{IdDelivery}" pres="onViewDelivery"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto">
+                            <Label text="{i18n>Pcs}"/>
+                            <table:template>
+                                <Text text="{Shipper}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto">
+                            <Label text="{i18n>pcsWeigth}"/>
+                            <table:template>
+                                <Text text="{PCs} / {Weigth}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column filterProperty="DropOffRef">
+                            <Label text="{i18n>dropRef}"/>
+                            <table:template>
+                                <Text text="{DropOffRef}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column>
+                            <Label text="{i18n>deliveryDate}"/>
+                            <table:template>
+                                <Text text="{Date} {Time}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto">
+                            <Label text="{i18n>deliveryETA}"/>
+                            <table:template>
+                                <Text text="{DateETATo} {TimeETATo}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column>
+                            <Label text="{i18n>singBy}"/>
+                            <table:template>
+                                <Text text="{SingBy}"/>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
             </Panel>
-            <Panel>
+            <Panel id="pCarrierCostShipment" class="sapUiSmallMargin" headerText="{i18n>carrierCost}">
+                <table:Table id="tCarrierCostShipment" rows="{/mShipmentSelected/CarrierCost}" visibleRowCount="{= ${/mShipmentSelected/CarrierCost}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
+                    <table:extension>
+                        <OverflowToolbar id="otCarrierCost">
+                            <ToolbarSpacer id="tsCarrierCost"/>
+                            <Button id="btnAddCarrierCost" icon="sap-icon://add" press="onCreateCarrierCost" tooltip="Add">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLAddCarrierCost" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                            <Button id="btnEditCarrierCost" icon="sap-icon://edit" press="onEditCarrierCost" tooltip="Edit">
+                                <layoutData>
+                                    <OverflowToolbarLayoutData id="idOTLEditCarrierCost" priority="NeverOverflow"/>
+                                </layoutData>
+                            </Button>
+                        </OverflowToolbar>
+                    </table:extension>
+                    <table:noData>
+                        <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
+                    </table:noData>
+                    <table:columns>
+                        <table:Column width="auto" filterProperty="IdCarrierCost">
+                            <Label text="{i18n>carrierCost}"/>
+                            <table:template>
+                                <Link text="{IdCarrierCost}" pres="onViewCarrierCost"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto" filterProperty="Category">
+                            <Label text="{i18n>category}"/>
+                            <table:template>
+                                <Text text="{Category}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column width="auto" filterProperty="Amount">
+                            <Label text="{i18n>amount}"/>
+                            <table:template>
+                                <Text text="{Amount}"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column>
+                            <Label text="{i18n>notes}"/>
+                            <table:template>
+                                <Text text="{Notes}"/>
+                            </table:template>
+                        </table:Column>
+                    </table:columns>
+                </table:Table>
             </Panel>
         </Page>
     </App>

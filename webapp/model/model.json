@@ -59,6 +59,9 @@
     ],
     "mTripSelected" : {},
     "mShipmentSelected" : {},
+    "mPickUpSelected" : {},
+    "mDeliveryData" : {},
+    "mCarrierCost" : {},
     "mDataTripsAll":[
         {
             "ID" : "1000001",
@@ -116,7 +119,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000001",
                             "Date" : "2022-01-19",
@@ -138,6 +141,14 @@
                             "Phone" : "",
                             "Contact" : "",
                             "Notes" : ""
+                        }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000001",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 1330,
+                            "Notes" : "Notes Carrier Cost Categories"
                         }
                     ]
                 },
@@ -198,6 +209,14 @@
                             "Phone" : "",
                             "Contact" : "",
                             "Notes" : ""
+                        }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000002",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 1230,
+                            "Notes" : "Notes Carrier Cost Categories"
                         }
                     ]
                 }
@@ -280,6 +299,14 @@
                             "Contact" : "",
                             "Notes" : ""
                         }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000003",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 1630,
+                            "Notes" : "Notes Carrier Cost Categories"
+                        }
                     ]
                 },
                 {
@@ -339,6 +366,14 @@
                             "Phone" : "",
                             "Contact" : "",
                             "Notes" : ""
+                        }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000004",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 2330,
+                            "Notes" : "Notes Carrier Cost Categories"
                         }
                     ]
                 }
@@ -421,6 +456,14 @@
                             "Contact" : "",
                             "Notes" : ""
                         }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000005",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 330,
+                            "Notes" : "Notes Carrier Cost Categories"
+                        }
                     ]
                 },
                 {
@@ -480,6 +523,14 @@
                             "Phone" : "",
                             "Contact" : "",
                             "Notes" : ""
+                        }
+                    ],
+                    "CarrierCost" : [
+                        {
+                            "IdCarrierCost" : "1500000006",
+                            "Category" : "Freigth Charges",
+                            "Amount" : 1670,
+                            "Notes" : "Notes Carrier Cost Categories"
                         }
                     ]
                 }

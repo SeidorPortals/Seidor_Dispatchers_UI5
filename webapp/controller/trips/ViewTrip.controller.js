@@ -16,12 +16,18 @@ sap.ui.define([
             oModel.setProperty("/mTripSelected", {}); 
         },
 
-        onViewShipment: function() {
+        onViewShipment: function(oEvent) {
             let oModel = this._getModel();
-            oModel.setProperty("/mPropertyTrips/vTabAll", false);
-            oModel.setProperty("/mPropertyTrips/vTabCreate", false);
-            oModel.setProperty("/mPropertyTrips/vTabView", false);
-            oModel.setProperty("/mPropertyTrips/vTabShipment", true);
+            const _shipmentSelected = oModel.getProperty("/mTripSelected/Shipments").find(x => x.Number === oEvent.getSource().getProperty("text"));
+            if(_shipmentSelected === undefined) {
+                MessageBox.error("No Found Data.");
+            }else{
+                oModel.setProperty("/mShipmentSelected", _shipmentSelected);
+                oModel.setProperty("/mPropertyTrips/vTabAll", false);
+                oModel.setProperty("/mPropertyTrips/vTabCreate", false);
+                oModel.setProperty("/mPropertyTrips/vTabView", false);
+                oModel.setProperty("/mPropertyTrips/vTabShipment", true);
+            }
         },
 
         onEditTrip: function() {
