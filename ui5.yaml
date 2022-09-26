@@ -17,7 +17,8 @@ server:
         xsappJson: "xs-app.json"
         destinations:
           - name: "BYD_QA"
-            url: "https://my421514.businessbydesign.cloud.sap/sap/byd/odata/cust/v1"
+            url: "https://my421514.businessbydesign.cloud.sap/sap/byd/odata"
+
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
