@@ -35,7 +35,6 @@ sap.ui.define([
         },
 
         onPreviousAndNextTrip: function(action) {
-            debugger;
             var oModel = this._getModel();
             let index = oModel.getProperty("/mDataTripsAll").indexOf(oModel.getProperty("/mTripSelected"));
             if(action === "previous") {

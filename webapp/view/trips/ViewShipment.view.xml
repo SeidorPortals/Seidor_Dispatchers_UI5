@@ -105,7 +105,7 @@
                 </table:Table>
             </Panel>
             <Panel id="pDeliveriesShipment" class="sapUiSmallMargin" headerText="{i18n>deliveries}">
-                <table:Table id="tDeliveryShipment" rows="{/mShipmentSelected/DeliveryData}" visibleRowCount="{= ${/mShipmentSelected/DeliveryData}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
+                <table:Table id="tDeliveryShipment" noDataText="No Data.." rows="{/mShipmentSelected/DeliveryData}" visibleRowCount="{= ${/mShipmentSelected/DeliveryData}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                     <table:extension>
                         <OverflowToolbar id="otDeliveries">
                             <ToolbarSpacer id="tsDeliveries"/>
@@ -121,9 +121,6 @@
                             </Button>
                         </OverflowToolbar>
                     </table:extension>
-                    <table:noData>
-                        <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
-                    </table:noData>
                     <table:columns>
                         <table:Column width="auto" filterProperty="IdDelivery">
                             <Label text="{i18n>delivery}"/>

@@ -187,7 +187,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000002",
                             "Date" : "2022-01-19",
@@ -276,7 +276,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000003",
                             "Date" : "2022-01-19",
@@ -344,7 +344,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000004",
                             "Date" : "2022-01-19",
@@ -433,7 +433,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000005",
                             "Date" : "2022-01-19",
@@ -501,7 +501,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveyData" : [
+                    "DeliveryData" : [
                         {
                             "IdDelivery" : "4000006",
                             "Date" : "2022-01-19",

@@ -13,7 +13,7 @@
 						<OverflowToolbarLayoutData id="idOTLD" priority="NeverOverflow"/>
 					</layoutData>
 				</Button>
-				<Image id="idImage" src="./image/seidor.png" width="4%" tooltip="Logo Seidor"/>
+				<Image id="idImage" src="./image/UTB.png" width="4%" tooltip="Logo Seidor"/>
 				<ToolbarSpacer id="idTS" width="20px"/>
 				<Text id="idT" text="{i18n>title}"/>
 			</tnt:ToolHeader>

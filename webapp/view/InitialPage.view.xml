@@ -10,7 +10,8 @@
 			<content>
 				<Carousel id="idCarousel" class="sapUiContentPadding" loop="true">
 					<pages>
-						<Image id="idImageSeidor" src="./image/seidor.png" alt="ECYO" width="25%"/>
+						<Image id="idImageUTB" src="./image/UTB.png" alt="UTB" width="25%"/>
+						<Image id="idImageCali" src="./image/cali.jpg" alt="Cali" width="25%"/>
 						<Image id="idImageSAP" src="./image/sap.png" alt="SAP" width="25%"/>
 					</pages>
 				</Carousel>
