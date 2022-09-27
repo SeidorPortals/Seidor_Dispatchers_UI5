@@ -14,9 +14,9 @@ sap.ui.define([
         
         beforeNavigate: function(offBI) {
             this.oModel = this._getModel();
-			//if(offBI){
-			//	Util._showBI(false);
-			//}
+			if(offBI){
+				Util._showBI(false);
+			}
             this.onUsageServiceCarrier();
 		},
 
@@ -26,7 +26,7 @@ sap.ui.define([
         },
         
         onUsageServiceCarrier: function(){
-            Util._showBI(true);
+           /* Util._showBI(true);
             var that = this;
             jQuery.ajax({
                 async: false,
@@ -44,7 +44,7 @@ sap.ui.define([
                     console.error(err);
                 }
             });
-            Util._showBI(false);
+            Util._showBI(false);*/
         },
 		
 		/* _getCore
