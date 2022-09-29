@@ -1,0 +1,60 @@
+<core:FragmentDefinition
+    xmlns = "sap.m"
+    xmlns:core = "sap.ui.core"
+    xmlns:f = "sap.ui.layout.form">
+    <Dialog id="dShowFragmentPickup" class="sapUiSizeCompact" title="Pick Up Data {/mPickUpSelected/IdPickup}" contentHeight="70%" contentWidth="50%">
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+                <f:content>
+                    <Label text="Date"/>
+                    <Text text="{/mPickUpSelected/PickupDate}"/>
+                    <Label text="ETA From"/>
+                    <Text text="{/mPickUpSelected/PickupEPU}"/>
+                    <Label text="ETA To"/>
+                    <Text text="{/mPickUpSelected/PickupEPU}"/>
+                    <Label text="PCs"/>
+                    <Text text="{/mPickUpSelected/PCs}"/>
+                    <Text text="{/mPickUpSelected/Details}"/>
+                    <Label text="Weigth"/>
+                    <Text text="{/mPickUpSelected/Weigth}"/>
+                    <Label text="Commodity"/>
+                    <Text text="{/mPickUpSelected/Commodity}"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+                <f:content>
+                    <Label text="PickUp Ref#"/>
+                    <Text text="{/mPickUpSelected/PickupRef}"/>
+                    <Label text="Shipper"/>
+                    <Text text="{/mPickUpSelected/Shipper}"/>
+                    <Label text="Address #1"/>
+                    <Text text="{/mPickUpSelected/Address1}"/>
+                    <Label text="Address #2"/>
+                    <Text text="{/mPickUpSelected/Address2}"/>
+                    <Label text="City"/>
+                    <Text text="{/mPickUpSelected/City}"/>
+                    <Label text="Zip Code"/>
+                    <Text text="{/mPickUpSelected/ZipCode}"/>
+                    <Label text="Phone"/>
+                    <Text text="{/mPickUpSelected/Phone}"/>
+                    <Label text="Contact"/>
+                    <Text text="{/mPickUpSelected/Contact}"/>
+                    <Label text="Seal #"/>
+                    <Text text="{/mPickUpSelected/Seal}"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+                <TextArea rows="3" value="{/mPickUpSelected/Notes}" editable="false"/>
+            </f:SimpleForm>
+        </VBox>
+        <Bar design="Footer">
+            <contentMiddle>
+                <Button text="Accept" icon="sap-icon://accept" press=".onCloseFragment('dShowFragmentPickup')" type="Accept"/>
+            </contentMiddle>
+        </Bar>
+    </Dialog>
+</core:FragmentDefinition>

@@ -34,7 +34,7 @@
     "mDataCarriers" : [],
     "mCarrierSelected" : {},
     "mDataTrips" : [
-            {
+        {
             "ID" : "1000001",
             "COMPANY" : "Jologa",
             "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
@@ -69,8 +69,8 @@
     "mTripSelected" : {},
     "mShipmentSelected" : {},
     "mPickUpSelected" : {},
-    "mDeliveryData" : {},
-    "mCarrierCost" : {},
+    "mDeliverySelected" : {},
+    "mCarrierCostSelected" : {},
     "mDataTripsAll":[
         {
             "ID" : "1000001",
@@ -125,10 +125,10 @@
                             "City" : "",
                             "ZipCode" : "",
                             "Seal" : "",
-                            "Notes" : ""
+                            "Notes" : "Esto es una nota larga para realizar las pruebas del text area del pickup"
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000001",
                             "Date" : "2022-01-19",
@@ -149,7 +149,7 @@
                             "ZipCode" : "22630",
                             "Phone" : "",
                             "Contact" : "",
-                            "Notes" : ""
+                            "Notes" : "Notas de Delivery"
                         }
                     ],
                     "CarrierCost" : [
@@ -196,7 +196,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000002",
                             "Date" : "2022-01-19",
@@ -285,7 +285,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000003",
                             "Date" : "2022-01-19",
@@ -353,7 +353,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000004",
                             "Date" : "2022-01-19",
@@ -442,7 +442,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000005",
                             "Date" : "2022-01-19",
@@ -510,7 +510,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000006",
                             "Date" : "2022-01-19",

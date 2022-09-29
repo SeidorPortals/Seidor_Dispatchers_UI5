@@ -32,4 +32,25 @@ A Seidor application for dispatchers
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
-
+#### Important file xs-app
+```
+,
+    {
+        "source": "^/test-resources/(.*)$",
+        "target": "/test-resources/$1",
+        "authenticationType": "none",
+        "destination": "ui5"
+    },
+    {
+        "source": "^/resources/(.*)$",
+        "target": "/resources/$1",
+        "authenticationType": "none",
+        "destination": "ui5"
+    },
+    {
+        "source": "^(.*)$",
+        "target": "$1",
+        "service": "html5-apps-repo-rt",
+        "authenticationType": "xsuaa"
+    }
+```

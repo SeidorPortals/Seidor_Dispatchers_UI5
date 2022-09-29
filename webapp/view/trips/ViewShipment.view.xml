@@ -68,7 +68,7 @@
                         <table:Column width="auto" filterProperty="IdPickup">
                             <Label text="{i18n>pickup}"/>
                             <table:template>
-                                <Link text="{IdPickup}" pres="onViewPickup"/>
+                                <Link text="{IdPickup}" press="onViewPickup"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto" filterProperty="Shipper">
@@ -105,7 +105,7 @@
                 </table:Table>
             </Panel>
             <Panel id="pDeliveriesShipment" class="sapUiSmallMargin" headerText="{i18n>deliveries}">
-                <table:Table id="tDeliveryShipment" noDataText="No Data.." rows="{/mShipmentSelected/DeliveryData}" visibleRowCount="{= ${/mShipmentSelected/DeliveryData}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
+                <table:Table id="tDeliveryShipment" noDataText="No Data.." rows="{/mShipmentSelected/Delivery}" visibleRowCount="{= ${/mShipmentSelected/Delivery}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                     <table:extension>
                         <OverflowToolbar id="otDeliveries">
                             <ToolbarSpacer id="tsDeliveries"/>
@@ -125,7 +125,7 @@
                         <table:Column width="auto" filterProperty="IdDelivery">
                             <Label text="{i18n>delivery}"/>
                             <table:template>
-                                <Link text="{IdDelivery}" pres="onViewDelivery"/>
+                                <Link text="{IdDelivery}" press="onViewDelivery"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto">
@@ -191,7 +191,7 @@
                         <table:Column width="auto" filterProperty="IdCarrierCost">
                             <Label text="{i18n>carrierCost}"/>
                             <table:template>
-                                <Link text="{IdCarrierCost}" pres="onViewCarrierCost"/>
+                                <Link text="{IdCarrierCost}" press="onViewCarrierCost"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto" filterProperty="Category">
