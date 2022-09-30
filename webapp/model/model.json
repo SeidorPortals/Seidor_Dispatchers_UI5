@@ -15,16 +15,6 @@
             "icon": "sap-icon://account",
             "key": "carriersPage",
             "visible" : true
-        },{
-            "title" : "Master Data",
-            "icon": "sap-icon://instance",
-            "visible" : true,
-            "items" : [{
-                    "title" : "Trailer",
-                    "key" : "trailerPage",
-                    "icon": "sap-icon://instance"
-                }
-            ]
         }
     ],
     "mPropertyTrips" : {
