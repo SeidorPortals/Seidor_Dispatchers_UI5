@@ -30,6 +30,21 @@
         "vTabView" : false,
         "edit" : false
     },
+    "mPropertyTrailer" : {
+        "vTabAll" : true,
+        "vTabCreate" : false,
+        "edit" : false
+    },
+    "mPropertyCommodity" : {
+        "vTabAll" : true,
+        "vTabCreate" : false,
+        "edit" : false
+    },
+    "mPropertyEquipmentTypes" : {
+        "vTabAll" : true,
+        "vTabCreate" : false,
+        "edit" : false
+    },
     
     "mDataCarriers" : [
     {
@@ -60,6 +75,37 @@
         "STEPDECK": "0" 
     }],
     "mCarrierSelected" : {},
+    "mDataTrailer" : {},
+    "mTrailerSelected" : {},
+    "mDataCommodity" : {},
+    "mCommoditySelected" : {},
+    "mDataEquipmentType" : [
+        {
+            "ID" : "1",
+            "Description" : "Van"
+        },
+        {
+            "ID" : "2",
+            "Description" : "Reefer"
+        },
+        {
+            "ID" : "3",
+            "Description" : "Flatbed"
+        },
+        {
+            "ID" : "4",
+            "Description" : "Step Deck"
+        },
+        {
+            "ID" : "5",
+            "Description" : "Chassis / Container"
+        },
+        {
+            "ID" : "6",
+            "Description" : "Van/ Reefer/ Flatbed/ Step Deck"
+        }
+    ],
+    "mEquipmentTypeSelected" : {},
     "mDataTrips" : [
             {
             "ID" : "1000001",

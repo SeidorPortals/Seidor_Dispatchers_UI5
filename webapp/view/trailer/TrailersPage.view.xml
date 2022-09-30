@@ -1,0 +1,26 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.trailer.TrailersPage" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <pages>
+			<Page id="idPage" title="Carrier">
+                <IconTabBar id="idIconTabBarCarrier" class="sapUiContentPadding" expandable="false">
+                    <items>
+                        <IconTabFilter id="idTabAllCarrier" icon="sap-icon://instance" visible="{/mPropertyTrailers/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllCarrier" viewName="com.seidor.usa.dispatchers.view.trailers.AllTrailers"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateCarrier" icon="sap-icon://create-form" visible="{/mPropertyTrailers/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditCarrier" viewName="com.seidor.usa.dispatchers.view.trailers.EditCarrier"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+			</Page>
+		</pages>
+    </App>
+</mvc:View>

@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.carriers.EditCarrier" 
+	controllerName="com.seidor.usa.dispatchers.controller.trailers.EditTrailer" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
@@ -11,10 +11,10 @@
         <Page showHeader="false">
             <Toolbar id="idToolbar">
                 <Button id="idBtnBkNvoPeaje" type="Back" press="onBackReport"/>
-                <Text text="Carrier" />
+                <Text text="Trailer" />
                 <ToolbarSpacer  id="idTS2"/>
-                <Button id="btnSaveCarrier" icon="sap-icon://save" press="onSaveCarrier" visible="true"/>
-                <Button id="btnCancelEditCarrier" icon="sap-icon://reset" press="onCancelEditCarrier" visible="true"/>
+                <Button id="btnSaveTrailer" icon="sap-icon://save" press="onSaveTrailer" visible="true"/>
+                <Button id="btnCancelEditTrailer" icon="sap-icon://reset" press="onCancelEditTrailer" visible="true"/>
             </Toolbar>
             <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
                 <f:Form id="FormChange480_12120" editable="true">
@@ -27,12 +27,12 @@
                         <f:formElements>
                             <f:FormElement label="MC">
                                 <f:fields>
-                                    <Input value="{/mCarrierSelected/CBP_UUID}" required="true"/>
+                                    <Input value="{/mTrailerSelected/CBP_UUID}" required="true"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Name">
                                 <f:fields>
-                                    <Input value="{/mCarrierSelected/TBP_UUID}" id="ca_name"/>
+                                    <Input value="{/mTrailerSelected/TBP_UUID}" id="ca_name"/>
                                 </f:fields>
                             </f:FormElement>                        
                             <f:FormElement label="Tax ID">
