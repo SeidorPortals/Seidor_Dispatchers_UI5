@@ -1,24 +1,22 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.trips.ViewTrip" 
+	controllerName="com.seidor.usa.dispatchers.controller.trips.FormTrip" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
 	xmlns:l="sap.ui.layout" 
 	xmlns:f="sap.ui.layout.form" 
 	xmlns="sap.m" 
-	class="sapUiSizeCompact"
-    beforeLoad="onBeforeLoad">
+	class="sapUiSizeCompact">
     <App ScrollContainer="false">
         <pages>
             <Page showHeader="false">
                 <Toolbar id="idToolbar">
                     <Button type="Back" press="onBackReport"/>
                     <ToolbarSpacer />
-                    <Button id="btnEditTrip" icon="sap-icon://edit" press="onEditTrip"/>
-                    <Button id="btnPreviousTrip" icon="sap-icon://media-reverse" press="onPreviousAndNextTrip('previous')" type="Default" tooltip="{i18n>before}"/>
-                    <Button id="btnNextTrip" icon="sap-icon://media-play" press="onPreviousAndNextTrip('next')" type="Default" tooltip="{i18n>next}"/>
+                <Button id="btnSaveTrip" icon="sap-icon://save" press="onSaveTrip" visible="true"/>
+                <Button id="btnCancelEditTrip" icon="sap-icon://sys-cancel" press="onCancelEditTrip" visible="true" type="Reject"/>
                 </Toolbar>
-                <Panel id="pTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo} {/mTripSelected/ID}">
+                <Panel id="pFormTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo} {/mTripSelected/ID}">
                     <f:SimpleForm id="sfViewTrip"
                         editable="false"
                         layout="ColumnLayout"
@@ -29,48 +27,48 @@
                         <f:content>
                             <core:Title text="{i18n>general}"/>
                             <Label text="{i18n>carrier}" />
-                            <Text text="{/mTripSelected/Carrier}"/>
+                            <Input id="inpCarrier" value="{/mTripSelected/Carrier}"/>
                             <Label text="{i18n>transportType}" />
-                            <RadioButtonGroup id="rbgTransportType" columns="2" selectedIndex="{/mTripSelected/TransportType}" editable="false">
+                            <RadioButtonGroup id="rbgTransportType" columns="2" selectedIndex="{/mTripSelected/TransportType}">
                                 <RadioButton id="FTL" text="FTL" />
                                 <RadioButton id="LTL" text="LTL"/>
                             </RadioButtonGroup>
                             <Label text="{i18n>vpSales}" />
-                            <Text text="{/mTripSelected/Error}"/>
+                            <Input id="inpVpSales" value="{/mTripSelected/VpSales}"/>
                             <Label text="{i18n>agent}" />
-                            <Text text="{/mTripSelected/Error}"/>
+                            <Input id="inpAgent" value="{/mTripSelected/Error}"/>
                             <core:Title text="{i18n>infoLogistic}"/>
                             <Label text="{i18n>driver}" />
-                            <Text text="{/mTripSelected/Driver}"/>
+                            <Input id="inpDriver" value="{/mTripSelected/Driver}"/>
                             <Label text="{i18n>truck}" />
-                            <Text text="{/mTripSelected/Carrier}"/>
+                            <Input id="inpTruck" value="{/mTripSelected/Carrier}"/>
                             <Label text="{i18n>trailer}" />
-                            <Text text="{/mTripSelected/Trailer}"/>
+                            <Input id="inpTrailer" value="{/mTripSelected/Trailer}"/>
                             <Label text="{i18n>phoneDriver}" />
-                            <Text text="{/mTripSelected/DispatcherDriverPhone}"/>
+                            <Input id="inpPhoneDriver" value="{/mTripSelected/DispatcherDriverPhone}"/>
                             <Label text="{i18n>typeEquipment}" />
-                            <Text text="{/mTripSelected/EquipmentType}"/>
+                            <Input id="inpQuimentType" value="{/mTripSelected/EquipmentType}"/>
                             <Label text="{i18n>temperature}" />
-                            <Text text="{/mTripSelected/Temperature}"/>
+                            <Input id="inpTemperature" value="{/mTripSelected/Temperature}"/>
                         </f:content>
                     </f:SimpleForm>
                 </Panel>
                 <Panel id="pShipments" class="sapUiSmallMargin" headerText="{i18n>shipments}">
                     <table:Table id="tShipmentsTrips" rows="{/mTripSelected/Shipments}" visibleRowCount="{= ${/mTripSelected/Shipments}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                         <table:extension>
-                            <!--OverflowToolbar id="idOTShipments">
+                            <OverflowToolbar id="idOTShipments">
                                 <ToolbarSpacer id="idTSShipments"/>
                                 <Button id="idBtnAddShipments" icon="sap-icon://add" press="onCreateShipments" tooltip="Add">
                                     <layoutData>
                                         <OverflowToolbarLayoutData id="idOTLAddShipments" priority="NeverOverflow"/>
                                     </layoutData>
                                 </Button>
-                                <Button id="idBtnEditShipments" icon="sap-icon://edit" press="onEditShipments" tooltip="Edit" visible="false">
+                                <Button id="idBtnEditShipments" icon="sap-icon://edit" press="onEditShipments" tooltip="Edit">
                                     <layoutData>
                                         <OverflowToolbarLayoutData id="idOTLEditShipments" priority="NeverOverflow"/>
                                     </layoutData>
                                 </Button>
-                            </OverflowToolbar-->
+                            </OverflowToolbar>
                         </table:extension>
                         <table:noData>
                             <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
@@ -140,20 +138,20 @@
                                     columnsXL="3">
                                     <f:content>
                                         <core:Title text="{i18n>specialInstruction}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}" editable="false"/>
+                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}"/>
                                         <core:Title text="{i18n>notesCarrier}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/NotesToCarries}" editable="false"/>
+                                        <TextArea rows="3" value="{/mTripSelected/NotesToCarries}"/>
                                         <Label text="{i18n>notificationEmail}"/>
-                                        <Text text="{/mTripSelected/CarrierNotificationEmail}"/>
+                                        <Input id="inpNotificationEmail" value="{/mTripSelected/CarrierNotificationEmail}"/>
                                         <core:Title text="{i18n>generalNotes}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/GeneralNotes}" editable="false"/>
+                                        <TextArea rows="3" value="{/mTripSelected/GeneralNotes}"/>
                                         <Label text="{i18n>agentEmail}"/>
-                                        <Text text="{/mTripSelected/AgentEmail}"/>
+                                        <Input id="inpAgentEmail" value="{/mTripSelected/AgentEmail}"/>
                                     </f:content>
                                 </f:SimpleForm>
                             </IconTabFilter>
                             <IconTabFilter text="{i18n>attachments}" key="info">
-                                <table:Table>
+                                <table:Table visibleRowCount="2">
                                     <table:noData>
                                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
                                     </table:noData>

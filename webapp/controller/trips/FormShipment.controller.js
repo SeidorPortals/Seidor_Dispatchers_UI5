@@ -5,31 +5,14 @@ sap.ui.define([
     "com/seidor/usa/dispatchers/util/Util"
 ], function (Controller, MessageBox, Fragment){
     'use strict';
-    return Controller.extend("com.seidor.usa.dispatchers.controller.trips.ViewShipment", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trips.FormShipment", {
         onInit: function(){},
         onAfterRendering: function(){
             this.oModel = this._getModel();
         },
         onBackReport: function(){
-            this.oModel.setProperty("/mPropertyTrips/vTabView", true);
-            this.oModel.setProperty("/mPropertyTrips/vTabShipmentView", false);
-        },
-        onPreviousAndNextShipment: function(action) {
-            let index = this.oModel.getProperty("/mTripSelected/Shipments").indexOf(this.oModel.getProperty("/mShipmentSelected"));
-            if(action === "previous") {
-                index --;
-            }else{
-                index ++;
-            }
-            if(index > -1){
-                if(index < this.oModel.getProperty("/mTripSelected/Shipments").length){
-                    this.oModel.setProperty("/mShipmentSelected", this.oModel.getProperty("/mTripSelected/Shipments")[index])
-                }else{
-                    MessageBox.alert("No more records");
-                }
-            }else{
-                MessageBox.alert("No more records");
-            }
+            this.oModel.setProperty(`/mPropertyTrips/vTabCreate`, true);
+            this.oModel.setProperty("/mPropertyTrips/vTabShipmentCreate", false);
         },   
         onViewPickup: function(oEvent) {
             const _pickupSelected = this.oModel.getProperty("/mShipmentSelected/PickUp").find(x => x.IdPickup === oEvent.getSource().getProperty("text"));

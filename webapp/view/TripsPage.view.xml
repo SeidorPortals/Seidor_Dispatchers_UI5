@@ -16,13 +16,16 @@
                             <mvc:XMLView id="xmlViewAllTrips" viewName="com.seidor.usa.dispatchers.view.trips.AllTrips"/>
                         </IconTabFilter>
                         <IconTabFilter id="idTabCreateTrip" icon="sap-icon://create-form" visible="{/mPropertyTrips/vTabCreate}">
-                            <mvc:XMLView id="xmlViewEditTrips" viewName="com.seidor.usa.dispatchers.view.trips.EditTrip"/>
+                            <mvc:XMLView id="xmlViewEditTrips" viewName="com.seidor.usa.dispatchers.view.trips.FormTrip"/>
                         </IconTabFilter>
                         <IconTabFilter id="idTabViewTrip" icon="sap-icon://approvals" visible="{/mPropertyTrips/vTabView}">
                             <mvc:XMLView id="xmlViewViewTrips" viewName="com.seidor.usa.dispatchers.view.trips.ViewTrip"/>
                         </IconTabFilter>
-                        <IconTabFilter id="idTabViewShipment" icon="sap-icon://shipping-status" visible="{/mPropertyTrips/vTabShipment}">
+                        <IconTabFilter id="idTabViewShipment" icon="sap-icon://shipping-status" visible="{/mPropertyTrips/vTabShipmentView}">
                             <mvc:XMLView id="xmlViewViewShipment" viewName="com.seidor.usa.dispatchers.view.trips.ViewShipment"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateShipment" icon="sap-icon://shipping-status" visible="{/mPropertyTrips/vTabShipmentCreate}">
+                            <mvc:XMLView id="xmlViewFormShipment" viewName="com.seidor.usa.dispatchers.view.trips.FormShipment"/>
                         </IconTabFilter>
                     </items>
                 </IconTabBar>
