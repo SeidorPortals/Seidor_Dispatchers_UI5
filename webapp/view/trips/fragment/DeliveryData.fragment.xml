@@ -1,0 +1,61 @@
+<core:FragmentDefinition
+    xmlns = "sap.m"
+    xmlns:core = "sap.ui.core"
+    xmlns:f = "sap.ui.layout.form">
+    <Dialog id="dShowFragmentDelivery" class="sapUiSizeCompact" title="Delivery Data {/mDeliverySelected/IdDelivery}" contentHeight="70%" contentWidth="50%">
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+                <f:content>
+                    <Label text="Date Time"/>
+                    <Text text="{/mDeliverySelected/Date} {/mDeliverySelected/Date}"/>
+                    <Label text="ETA From"/>
+                    <Text text="{/mDeliverySelected/DateETAFrom} {/mDeliverySelected/TimeETAFrom}"/>
+                    <Label text="ETA To"/>
+                    <Text text="{/mDeliverySelected/DateETATo} {/mDeliverySelected/TimeETATo}"/>
+                    <Label text="PCs"/>
+                    <Text text="{/mDeliverySelected/PCs}"/>
+                    <Label text="Detail"/>
+                    <Text text="{/mDeliverySelected/Detail}"/>
+                    <Label text="Weigth"/>
+                    <Text text="{/mDeliverySelected/Weigth}"/>
+                    <Label text="Sign By"/>
+                    <Text text="{/mDeliverySelected/SingBy}"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
+                <f:content>
+                    <Label text="Consignee"/>
+                    <Text text="{/mDeliverySelected/Consignee}"/>
+                    <Label text="Drop Off Ref #"/>
+                    <Text text="{/mDeliverySelected/DropOffRef}"/>
+                    <Label text="Address #1"/>
+                    <Text text="{/mDeliverySelected/Address1}"/>
+                    <Label text="Address #2"/>
+                    <Text text="{/mDeliverySelected/Address2}"/>
+                    <Label text="City"/>
+                    <Text text="{/mDeliverySelected/City}"/>
+                    <Label text="Zip Code"/>
+                    <Text text="{/mDeliverySelected/ZipCode}"/>
+                    <Label text="Phone"/>
+                    <Text text="{/mDeliverySelected/Phone}"/>
+                    <Label text="Contact"/>
+                    <Text text="{/mDeliverySelected/Contact}"/>
+                    <Label text="Seal #"/>
+                    <Text text="{/mDeliverySelected/Seal}"/>
+                </f:content>
+            </f:SimpleForm>
+        </VBox>
+        <VBox>
+            <f:SimpleForm layout="ColumnLayout" columnsM="1" columnsL="1" columnsXL="1">
+                <TextArea rows="3" value="{/mDeliverySelected/Notes}" editable="false"/>
+            </f:SimpleForm>
+        </VBox>
+        <Bar design="Footer">
+            <contentMiddle>
+                <Button text="Accept" icon="sap-icon://accept" press=".onCloseFragment('dShowFragmentDelivery')" type="Accept"/>
+            </contentMiddle>
+        </Bar>
+    </Dialog>
+</core:FragmentDefinition>

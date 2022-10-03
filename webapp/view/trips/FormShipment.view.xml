@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.trips.ViewShipment" 
+	controllerName="com.seidor.usa.dispatchers.controller.trips.FormShipment" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
@@ -26,28 +26,28 @@
                     columnsXL="4">
                     <f:content>
                         <Label text="{i18n>customer}" />
-                        <Text text="{/mShipmentSelected/Customer}"/>
+                        <Input id="inpCustomer" text="{/mShipmentSelected/Customer}"/>
                         <Label text="{i18n>bilingEmail}" />
-                        <Text text="{/mShipmentSelected/CustomerEmail}"/>
+                        <Input id="inpCustomerEmail" text="{/mShipmentSelected/CustomerEmail}"/>
                         <Label text="{i18n>carrier}" />
-                        <Text text="{/mShipmentSelected/CustomerEmail}"/>
+                        <Input id="inpCarrierEmail" text="{/mShipmentSelected/CustomerEmail}"/>
                         <Label text="{i18n>customerPo}" />
-                        <Text text="{/mShipmentSelected/CustomerPo}"/>
+                        <Input id="inpCustomerPo" text="{/mShipmentSelected/CustomerPo}"/>
                         <Label text="{i18n>carrier}" />
-                        <Text text="{/mTripSelected/Carrier}"/>
+                        <Input id="inpCarrier" text="{/mTripSelected/Carrier}"/>
                         <Label text="{i18n>notificationEmail}" />
-                        <Text text="{/mTripSelected/CarrierNotificationEmail}"/>
+                        <Input id="inpCarrierNotificationEmail" text="{/mTripSelected/CarrierNotificationEmail}"/>
                         <Label text="{i18n>pieces}" />
-                        <Text text="{/mShipmentSelected/Pieces}"/>
+                        <Input id="inpPieces" text="{/mShipmentSelected/Pieces}"/>
                         <Label text="{i18n>weigth}" />
-                        <Text text="{/mShipmentSelected/Weigth}"/>
+                        <Input id="inpWeigth" text="{/mShipmentSelected/Weigth}"/>
                     </f:content>
                 </f:SimpleForm>
             </Panel>
             <Panel id="pPickUpsShipment" class="sapUiSmallMargin" headerText="{i18n>pickUps}">
                 <table:Table id="tPickUpsShipment" rows="{/mShipmentSelected/PickUp}" visibleRowCount="{= ${/mShipmentSelected/PickUp}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                     <table:extension>
-                        <!--OverflowToolbar id="otPickUps">
+                        <OverflowToolbar id="otPickUps">
                             <ToolbarSpacer id="tsPickUps"/>
                             <Button id="btnAddPickUp" icon="sap-icon://add" press="onCreatePickup" tooltip="Add">
                                 <layoutData>
@@ -59,7 +59,7 @@
                                     <OverflowToolbarLayoutData id="idOTLEditPickup" priority="NeverOverflow"/>
                                 </layoutData>
                             </Button>
-                        </OverflowToolbar-->
+                        </OverflowToolbar>
                     </table:extension>
                     <table:noData>
                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
@@ -107,7 +107,7 @@
             <Panel id="pDeliveriesShipment" class="sapUiSmallMargin" headerText="{i18n>deliveries}">
                 <table:Table id="tDeliveryShipment" noDataText="No Data.." rows="{/mShipmentSelected/Delivery}" visibleRowCount="{= ${/mShipmentSelected/Delivery}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                     <table:extension>
-                        <!--OverflowToolbar id="otDeliveries">
+                        <OverflowToolbar id="otDeliveries">
                             <ToolbarSpacer id="tsDeliveries"/>
                             <Button id="btnAddDelivery" icon="sap-icon://add" press="onCreateDelivery" tooltip="Add">
                                 <layoutData>
@@ -119,7 +119,7 @@
                                     <OverflowToolbarLayoutData id="idOTLEditDelivery" priority="NeverOverflow"/>
                                 </layoutData>
                             </Button>
-                        </OverflowToolbar-->
+                        </OverflowToolbar>
                     </table:extension>
                     <table:columns>
                         <table:Column width="auto" filterProperty="IdDelivery">
@@ -170,7 +170,7 @@
             <Panel id="pCarrierCostShipment" class="sapUiSmallMargin" headerText="{i18n>carrierCost}">
                 <table:Table id="tCarrierCostShipment" rows="{/mShipmentSelected/CarrierCost}" visibleRowCount="{= ${/mShipmentSelected/CarrierCost}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
                     <table:extension>
-                        <!--OverflowToolbar id="otCarrierCost">
+                        <OverflowToolbar id="otCarrierCost">
                             <ToolbarSpacer id="tsCarrierCost"/>
                             <Button id="btnAddCarrierCost" icon="sap-icon://add" press="onCreateCarrierCost" tooltip="Add">
                                 <layoutData>
@@ -182,7 +182,7 @@
                                     <OverflowToolbarLayoutData id="idOTLEditCarrierCost" priority="NeverOverflow"/>
                                 </layoutData>
                             </Button>
-                        </OverflowToolbar-->
+                        </OverflowToolbar>
                     </table:extension>
                     <table:noData>
                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>

@@ -15,6 +15,43 @@
             "icon": "sap-icon://account",
             "key": "carriersPage",
             "visible" : true
+        },{
+            "title" : "Master Data",
+            "icon": "sap-icon://instance",
+            "visible" : true,
+            "items" : [
+                {
+                    "title" : "Driver",
+                    "key" : "",
+                    "icon": "sap-icon://instance"
+                },
+                {
+                    "title" : "Truck",
+                    "key" : "",
+                    "icon": "sap-icon://instance"
+                },
+                {
+                    "title" : "Trailer",
+                    "key" : "trailersPage",
+                    "icon": "sap-icon://instance"
+                }
+            ]
+        },{
+            "title" : "Logistic Data",
+            "icon": "sap-icon://instance",
+            "visible" : true,
+            "items" : [
+                {
+                    "title" : "Shipper",
+                    "key" : "",
+                    "icon": "sap-icon://instance"
+                },
+                {
+                    "title" : "Commodity",
+                    "key" : "commodityPage",
+                    "icon": "sap-icon://instance"
+                }
+            ]
         }
     ],
     "mPropertyTrips" : {
@@ -22,7 +59,8 @@
         "vTabCreate" : false,
         "vTabView" : false,
         "edit" : false,
-        "vTabShipment" : false
+        "vTabShipmentView" : false,
+        "vTabShipmentCreate" : false
     },
     "mPropertyCarriers" : {
         "vTabAll" : true,
@@ -30,7 +68,7 @@
         "vTabView" : false,
         "edit" : false
     },
-    "mPropertyTrailer" : {
+    "mPropertyTrailers" : {
         "vTabAll" : true,
         "vTabCreate" : false,
         "edit" : false
@@ -40,14 +78,33 @@
         "vTabCreate" : false,
         "edit" : false
     },
-    "mPropertyEquipmentTypes" : {
+    "mPropertyEquipmentType" : {
         "vTabAll" : true,
         "vTabCreate" : false,
         "edit" : false
-    },
-    
+    },  
+    "mDataWeightUnit":[
+        {
+            "UnitCode" : "LB",
+            "Description" : "Pound"
+        },
+        {
+            "UnitCode" : "KGM",
+            "Description" : "Kilograms"
+        }
+    ],
+    "mDataRoofType":[
+        {
+            "ID" : "1",
+            "Description" : "Aluminium"
+        },
+        {
+            "ID" : "2",
+            "Description" : "Translucent"
+        }
+    ],  
     "mDataCarriers" : [
-    {
+         {
         "CBP_UUID": "1000903",
         "TBP_UUID": "2K CARRIER INC",
         "CFRMTD_PSTL_ADDR": "2350 ROCKAWAY INDUSTRIAL BOULEVARD / CONYERS GA 30012 / US",
@@ -75,7 +132,7 @@
         "STEPDECK": "0" 
     }],
     "mCarrierSelected" : {},
-    "mDataTrailer" : {},
+    "mDataTrailers" : {},
     "mTrailerSelected" : {},
     "mDataCommodity" : {},
     "mCommoditySelected" : {},
@@ -106,8 +163,9 @@
         }
     ],
     "mEquipmentTypeSelected" : {},
+    
     "mDataTrips" : [
-            {
+        {
             "ID" : "1000001",
             "COMPANY" : "Jologa",
             "CARRIER" : "FILIPORTS TRANSPORTAT ION LLC",
@@ -139,11 +197,13 @@
             "COST" : 12897
         }
     ],
-    "mTripSelected" : {},
+    "mTripSelected" : {
+        "Shipments" : []
+    },
     "mShipmentSelected" : {},
     "mPickUpSelected" : {},
-    "mDeliveryData" : {},
-    "mCarrierCost" : {},
+    "mDeliverySelected" : {},
+    "mCarrierCostSelected" : {},
     "mDataTripsAll":[
         {
             "ID" : "1000001",
@@ -198,10 +258,10 @@
                             "City" : "",
                             "ZipCode" : "",
                             "Seal" : "",
-                            "Notes" : ""
+                            "Notes" : "Esto es una nota larga para realizar las pruebas del text area del pickup"
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000001",
                             "Date" : "2022-01-19",
@@ -222,7 +282,7 @@
                             "ZipCode" : "22630",
                             "Phone" : "",
                             "Contact" : "",
-                            "Notes" : ""
+                            "Notes" : "Notas de Delivery"
                         }
                     ],
                     "CarrierCost" : [
@@ -269,7 +329,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000002",
                             "Date" : "2022-01-19",
@@ -358,7 +418,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000003",
                             "Date" : "2022-01-19",
@@ -426,7 +486,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000004",
                             "Date" : "2022-01-19",
@@ -515,7 +575,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000005",
                             "Date" : "2022-01-19",
@@ -583,7 +643,7 @@
                             "Notes" : ""
                         }
                     ],
-                    "DeliveryData" : [
+                    "Delivery" : [
                         {
                             "IdDelivery" : "4000006",
                             "Date" : "2022-01-19",
