@@ -7,30 +7,30 @@ sap.ui.define([
 ], function(Controller, Util, JSONModel, Filter, MessageBox){
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.equipmenttype.AllEquipmentType", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trailer.AllTrailer", {
         onInit: function () {
         },
 
-        onCreateEquipType: function() {
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabAll", false);
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabCreate", true);
+        onCreateTrailer: function() {
+            this._getModel().setProperty("/mPropertyTrailers/vTabAll", false);
+            this._getModel().setProperty("/mPropertyTrailers/vTabCreate", true);
         },
 
-        onEditEquipType: function() {
+        onEditTrailer: function() {
             debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllEquipmentTypes").getSelectedIndex();
+            let _itemSelected = this.byId("tAllTrailers").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllEquipmentType").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mEquipmentTypeSelected",oModel.getProperty("/mDataEquipmentType")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyEquipmentType/vTabAll", false);
-                oModel.setProperty("/mPropertyEquipmentType/vTabCreate", true);
+                let _itemsTable = this.byId("tAllTrailers").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mTrailerSelected",oModel.getProperty("/mDataTrailers")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyTrailers/vTabAll", false);
+                oModel.setProperty("/mPropertyTrailers/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            
         },
 
-        onCopyEquipType: function() {
+        onCopyTrailer: function() {
             console.log("Medoto Copy");
         },
 

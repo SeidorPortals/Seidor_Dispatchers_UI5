@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.trailers.EditTrailer" 
+	controllerName="com.seidor.usa.dispatchers.controller.trailer.EditTrailer" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
@@ -20,169 +20,91 @@
                 <f:Form id="FormChange480_12120" editable="true">
                     <f:layout>
                         <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
-                            emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                            emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2" singleContainerFullSize="false"/>
                     </f:layout>
                     <f:formContainers>
                         <f:FormContainer title="General Informartion">
                         <f:formElements>
-                            <f:FormElement label="MC">
+                            <f:FormElement label="Number">
                                 <f:fields>
-                                    <Input value="{/mTrailerSelected/CBP_UUID}" required="true"/>
+                                    <Input value="{/mTrailerSelected/Number}" required="true"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Name">
+                            <f:FormElement label="Type">
                                 <f:fields>
-                                    <Input value="{/mTrailerSelected/TBP_UUID}" id="ca_name"/>
+                                    <Input value="{/mTrailerSelected/Type}" id="ca_name"/>
                                 </f:fields>
                             </f:FormElement>                        
-                            <f:FormElement label="Tax ID">
+                            <f:FormElement label="Make">
                                 <f:fields>
-                                    <Input value="{TAXID}" type="Email"/>
+                                    <Input value="{Make}"/>
                                 </f:fields>
                             </f:FormElement>                            
-                            <f:FormElement label="DOT">
+                            <f:FormElement label="Owner">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Tel"/>
+                                    <Input value="{Owner}"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Last DOT Rating Update">
+                            <f:FormElement label="Year">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
+                                    <Input value="{Year}"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Insurance Exp. Date">
+                            <f:FormElement label="ID Number">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
+                                    <Input value="{IDNumber}"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Factoring Company">
+                            <f:FormElement label="License PLate">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{LicensePLate}" />
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Factoring Email">
+                            <f:FormElement label="License Exp. Date">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{LicenseExpDate}" type="Date"/>
+                                </f:fields>
+                            </f:FormElement>                            
+                        </f:formElements>
+                    </f:FormContainer>
+                    <f:FormContainer title="Details">
+                        <f:formElements>
+                            <f:FormElement label="Annual Inspection">
+                                <f:fields>
+                                    <Input value="{LicenseExpDate}" type="Date"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Equipmet Type">
+                            <f:FormElement label="Physical Damage">
                                 <f:fields>
-                                    <Select id="EquipmetType" selectedKey="{EquipmentType}" items="{/mDataEquipmentType}">
+                                    <Input value="{PhysicalDamage}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Roof Type">
+                                <f:fields>
+                                    <Select id="RoofType" selectedKey="{RoofType}" items="{/mDataRoofType}">
                                         <items>
                                             <core:Item text="{Description}" key="{ID}"/>
                                         </items>
                                     </Select>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="QuickPay Discount">
+                            <f:FormElement label="Weight">
                                 <f:fields>
-                                    <Input value="{Sms}" />
-                                </f:fields>
-                            </f:FormElement>
-                        </f:formElements>
-                    </f:FormContainer>
-                    <f:FormContainer title="Address">
-                        <f:formElements>
-                            <f:FormElement label="Address">
-                                <f:fields>
-                                    <Input value="{SupplierName}" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="House Number/Street">
-                                <f:fields>
-                                    <Input value="{Street}">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                    <Input value="{HouseNumber}"/>
-                                        
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="City/State/ZIP">
-                                <f:fields>
-                                    <Input value="{City}" />
-                                    <Input value="{City}" />
-                                    <Input value="{ZIPCode}">
-                                        <layoutData>
-                                            <l:GridData span="XL3 L3 M3 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Country">
-                                <f:fields>
-                                    <Select id="country" selectedKey="{Country}" items="{/mDataCountry}">
+                                     <Input value="{Weight}" type="Number"/>
+                                    <Select id="WeightUnit" selectedKey="{WeightUnit}" items="{/mDataWeightUnit}">
                                         <items>
-                                            <core:Item text="{name}" key="{key}"/>
+                                            <core:Item text="{Description}" key="{UnitCode}"/>
                                         </items>
                                     </Select>
                                 </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Extras">
+                                <f:fields>
+                                    <CheckBox text="Ventilation" selected="{/Ventilation}"/>
+		                            <CheckBox text="Air" selected="{/Air}" />
+		                            <CheckBox text="Wheel Reposition" selected="{/Wheel Reposition}"/>
+                                </f:fields>
                             </f:FormElement>                            
-                            <f:FormElement label="Tel.">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Tel"/>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Contact">
-                                <f:fields>
-                                    <Input value="{Tel}"/>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="EMail">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Email"/>
-                                </f:fields>
-                            </f:FormElement>
-                        </f:formElements>
-                    </f:FormContainer>
-                    <f:FormContainer title="Units">
-                        <f:formElements>
-                            <f:FormElement label="Number Of Vans">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Number">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Refers">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Flatbeds">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Step Decks">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Other">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
                         </f:formElements>
                     </f:FormContainer>
                 </f:formContainers>
@@ -196,11 +118,11 @@
                                     layout="ColumnLayout"
                                     showHeader="false"
                                     columnsM="1"
-                                    columnsL="1"
-                                    columnsXL="1">
+                                    columnsL="2"
+                                    columnsXL="2">
                                     <f:content>
                                         <core:Title text="{i18n>Notes}"/>
-                                        <TextArea rows="4" value="{/mTripSelected/SpecialInstructions}" editable="true"/>
+                                        <TextArea rows="6" value="{/mTripSelected/SpecialInstructions}" editable="true"/>
                                     </f:content>
                                 </f:SimpleForm>
                             </IconTabFilter>

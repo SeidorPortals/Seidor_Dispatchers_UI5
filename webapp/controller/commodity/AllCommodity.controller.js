@@ -11,12 +11,12 @@ sap.ui.define([
         onInit: function () {
         },
 
-        onCreateCarrier: function() {
+        onCreateCommodity: function() {
             this._getModel().setProperty("/mPropertyCommodity/vTabAll", false);
             this._getModel().setProperty("/mPropertyCommodity/vTabCreate", true);
         },
 
-        onEditCarrier: function() {
+        onEditCommodity: function() {
             debugger;
             let oModel = this._getModel();
             let _itemSelected = this.byId("tAllCommodity").getSelectedIndex();
@@ -30,7 +30,7 @@ sap.ui.define([
             }            
         },
 
-        onCopyCarrier: function() {
+        onCopyCommodity: function() {
             console.log("Medoto Copy");
         },
 

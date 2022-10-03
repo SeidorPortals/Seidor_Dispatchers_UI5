@@ -62,7 +62,7 @@
                             </f:FormElement>
                             <f:FormElement label="Factoring Email">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{Sms}" placeholder="mail@mail.com"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Equipmet Type">
@@ -93,7 +93,7 @@
                                     <Input value="{Street}">
                                     <layoutData>
                                             <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
+                                    </layoutData>
                                     </Input>
                                     <Input value="{HouseNumber}"/>
                                         

@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.trailers.AllTrailers" 
+	controllerName="com.seidor.usa.dispatchers.controller.trailer.AllTrailers" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
@@ -46,28 +46,28 @@
                         <Label id="CA_idLabelTextType" text="{Type}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnAddress" filterProperty="Make">
-                    <Label id="CA_idLabelAddress" text="Address"/>
+                <table:Column id="CA_idColumnMake" filterProperty="Make">
+                    <Label id="CA_idLabelMake" text="Make"/>
                     <table:template>
-                        <Label id="CA_idLabelTextAddress" text="{CFRMTD_PSTL_ADDR}"/>
+                        <Label id="CA_idLabelTextMake" text="{Make}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnNPhone" filterProperty="Owner">
-                    <Label id="CA_idLabelNPhone" text="Phone"/>
+                <table:Column id="CA_idColumnNOwner" filterProperty="Owner">
+                    <Label id="CA_idLabelNOwner" text="Owner"/>
                     <table:template>
-                        <Label id="CA_idLabelTextPhone" text="{CPHONE_NR}"/>
+                        <Label id="CA_idLabelTextOwner" text="{COwner_NR}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnContact" filterProperty="Year">
-                    <Label id="CA_idLabelContact" text="Contact"/>
+                <table:Column id="CA_idColumnYear" filterProperty="Year">
+                    <Label id="CA_idLabelYear" text="Year"/>
                     <table:template>
-                        <Label id="CA_idLabelTextContact" text="{CONTACT}"/>
+                        <Label id="CA_idLabelTextYear" text="{Year}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnLPMEmail" filterProperty="ID Number">
-                    <Label id="CA_idLabelLPMEmail" text="LPM Email"/>
+                <table:Column id="CA_idColumnIDNumber" filterProperty="ID Number">
+                    <Label id="CA_idLabelIDNumber" text="ID Number"/>
                     <table:template>
-                        <Label id="CA_idLabelTextLPMEmail" text="{CEMAIL_URI}"/>
+                        <Label id="CA_idLabelTextIDNumber" text="{IDNumber}"/>
                     </table:template>
                 </table:Column>
                 <table:Column id="CA_idColumnCountry" filterProperty="License Plate">
@@ -76,34 +76,22 @@
                         <Label id="CA_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnEquipType" filterProperty="License Expires Date">
-                    <Label id="CA_idLabelEquipType" text="EquipType"/>
+                <table:Column id="CA_idColumnLicenseExpiresDate" filterProperty="License Expires Date">
+                    <Label id="CA_idLabelLicenseExpiresDate" text="License Expires Date"/>
                     <table:template>
-                        <Label id="CA_idLabelTextEquipType" text="{EQUIPMENTTYPE}"/>
+                        <Label id="CA_idLabelTextLicenseExpiresDate" text="{LicenseExpiresDate}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnVans" width="4em" filterProperty="Annual Inspection">
-                    <Label id="CA_idLabelEquipVans" text="Vans"/>
+                <table:Column id="CA_idColumnInsurance" width="4em" filterProperty="Insurance">
+                    <Label id="CA_idLabelInsurance" text="Insurance"/>
                     <table:template>
-                        <Label id="CA_idLabelTextVans" text="{VANS}"/>
+                        <Label id="CA_idLabelTextInsurance" text="{Insurance}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnReefer" width="4em" filterProperty="Insurance">
-                    <Label id="CA_idLabelReefer" text="Reefer"/>
+                <table:Column id="CA_idColumnRoofType" width="4em" filterProperty="Roof Type">
+                    <Label id="CA_idLabelRoofType" text="Roof Type"/>
                     <table:template>
-                        <Label id="CA_idLabelTextReefer" text="{REEFER}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column id="CA_idColumnFlatbed" width="4em" filterProperty="Roof Type">
-                    <Label id="CA_idLabelFlatbed" text="Flatbed"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextFlatbed" text="{FLATBED}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column id="CA_idColumnStepDeck" width="4em" filterProperty="Weight">
-                    <Label id="CA_idLabelStepDeck" text="StepDeck"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextStepDeck" text="{STEPDECK}"/>
+                        <Label id="CA_idLabelTextRoofType" text="{RoofType}"/>
                     </table:template>
                 </table:Column>
             </table:columns>

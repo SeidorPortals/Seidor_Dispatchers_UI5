@@ -3,12 +3,12 @@ sap.ui.define([
 ], function(Controller) {
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.equipmenttype.EditEquipmentType", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trailer.EditTrailer", {
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabAll", true);
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyTrailers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyTrailers/vTabCreate", false);
         },
 
 		/* _getModel

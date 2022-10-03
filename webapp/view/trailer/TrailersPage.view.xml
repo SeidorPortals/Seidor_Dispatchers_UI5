@@ -9,14 +9,14 @@
 	class="sapUiSizeCompact">
     <App>
         <pages>
-			<Page id="idPage" title="Carrier">
-                <IconTabBar id="idIconTabBarCarrier" class="sapUiContentPadding" expandable="false">
+			<Page id="idPage" title="Trailer">
+                <IconTabBar id="idIconTabBarTrailer" class="sapUiContentPadding" expandable="false">
                     <items>
-                        <IconTabFilter id="idTabAllCarrier" icon="sap-icon://instance" visible="{/mPropertyTrailers/vTabAll}">
-                            <mvc:XMLView id="xmlViewAllCarrier" viewName="com.seidor.usa.dispatchers.view.trailers.AllTrailers"/>
+                        <IconTabFilter id="idTabAllTrailer" icon="sap-icon://instance" visible="{/mPropertyTrailers/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllTrailer" viewName="com.seidor.usa.dispatchers.view.trailer.AllTrailers"/>
                         </IconTabFilter>
-                        <IconTabFilter id="idTabCreateCarrier" icon="sap-icon://create-form" visible="{/mPropertyTrailers/vTabCreate}">
-                            <mvc:XMLView id="xmlViewEditCarrier" viewName="com.seidor.usa.dispatchers.view.trailers.EditCarrier"/>
+                        <IconTabFilter id="idTabCreateTrailer" icon="sap-icon://create-form" visible="{/mPropertyTrailers/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditTrailer" viewName="com.seidor.usa.dispatchers.view.trailer.EditTrailer"/>
                         </IconTabFilter>
                     </items>
                 </IconTabBar>

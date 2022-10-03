@@ -13,17 +13,17 @@
                 <OverflowToolbar id="idOT">
                     <ToolbarSpacer id="idTS"/>
                     <SearchField id="idSearchManifiesto" placeholder="Buscar" value="{ui>/filterValue}" search="onHandleTxtFilter($event, 'idSearchManifiesto')" width="20rem"/>
-                    <Button id="idBtnAddcommodity" icon="sap-icon://add" press="onCreatecommodity" tooltip="Add">
+                    <Button id="idBtnAddCommodity" icon="sap-icon://add" press="onCreateCommodity" tooltip="Add">
                         <layoutData>
-                            <OverflowToolbarLayoutData id="idOTLAddcommodity" priority="NeverOverflow"/>
+                            <OverflowToolbarLayoutData id="idOTLAddCommodity" priority="NeverOverflow"/>
                         </layoutData>
                     </Button>
-                    <Button id="idBtnEditcommodity" icon="sap-icon://edit" press="onEditcommodity" tooltip="Edit">
+                    <Button id="idBtnEditCommodity" icon="sap-icon://edit" press="onEditCommodity" tooltip="Edit">
                         <layoutData>
-                            <OverflowToolbarLayoutData id="idOTLEditcommodity" priority="NeverOverflow"/>
+                            <OverflowToolbarLayoutData id="idOTLEditCommodity" priority="NeverOverflow"/>
                         </layoutData>
                     </Button>
-                    <Button id="btnDownloadExcelcommodity" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
+                    <Button id="btnDownloadExcelCommodity" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
                         <layoutData>
                             <OverflowToolbarLayoutData priority="NeverOverflow"/>
                         </layoutData>         

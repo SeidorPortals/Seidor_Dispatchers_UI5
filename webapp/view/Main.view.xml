@@ -46,14 +46,11 @@
                     <ScrollContainer id="carriersPage" horizontal="true" vertical="true" height="100%">
 						<mvc:XMLView id="idXMLVPage3" viewName="com.seidor.usa.dispatchers.view.CarriersPage"/>
 					</ScrollContainer>
-                    <ScrollContainer id="trailerPage" horizontal="true" vertical="true" height="100%">
-						<mvc:XMLView id="idXMLVPage4" viewName="com.seidor.usa.dispatchers.view.trailer.TrailerPage"/>
+                    <ScrollContainer id="trailersPage" horizontal="true" vertical="true" height="100%">
+						<mvc:XMLView id="idXMLVPage4" viewName="com.seidor.usa.dispatchers.view.trailer.TrailersPage"/>
 					</ScrollContainer>
                     <ScrollContainer id="commodityPage" horizontal="true" vertical="true" height="100%">
-						<mvc:XMLView id="idXMLVPage5" viewName="com.seidor.usa.dispatchers.view.CommodityPage"/>
-					</ScrollContainer>
-                    <ScrollContainer id="equipmentTypePage" horizontal="true" vertical="true" height="100%">
-						<mvc:XMLView id="idXMLVPage6" viewName="com.seidor.usa.dispatchers.view.equipmenttype.EquipmentType"/>
+						<mvc:XMLView id="idXMLVPage5" viewName="com.seidor.usa.dispatchers.view.commodity.CommodityPage"/>
 					</ScrollContainer>
 				</pages>
 			</NavContainer>
