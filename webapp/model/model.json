@@ -43,7 +43,7 @@
             "items" : [
                 {
                     "title" : "Shipper",
-                    "key" : "",
+                    "key" : "shipperPage",
                     "icon": "sap-icon://instance"
                 },
                 {
@@ -83,6 +83,11 @@
         "vTabCreate" : false,
         "edit" : false
     },  
+    "mPropertyShipper" : {
+        "vTabAll" : true,
+        "vTabCreate" : false,
+        "edit" : false
+    },
     "mDataWeightUnit":[
         {
             "UnitCode" : "LB",
@@ -132,10 +137,12 @@
         "STEPDECK": "0" 
     }],
     "mCarrierSelected" : {},
-    "mDataTrailers" : {},
+    "mDataTrailers" : [{}],
     "mTrailerSelected" : {},
-    "mDataCommodity" : {},
+    "mDataCommodity" : [{}],
     "mCommoditySelected" : {},
+    "mDataShipper" : [{}],
+    "mShipperSelected" : {},
     "mDataEquipmentType" : [
         {
             "ID" : "1",

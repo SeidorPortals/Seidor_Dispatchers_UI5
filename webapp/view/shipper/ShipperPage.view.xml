@@ -1,0 +1,26 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.shipper.ShipperPage" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <pages>
+			<Page id="idPage" title="Shipper">
+                <IconTabBar id="idIconTabBarShipper" class="sapUiContentPadding" expandable="false">
+                    <items>
+                        <IconTabFilter id="idTabAllShipper" icon="sap-icon://instance" visible="{/mPropertyShipper/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllShipper" viewName="com.seidor.usa.dispatchers.view.shipper.AllShipper"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateShipper" icon="sap-icon://create-form" visible="{/mPropertyShipper/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditShipper" viewName="com.seidor.usa.dispatchers.view.shipper.EditShipper"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+			</Page>
+		</pages>
+    </App>
+</mvc:View>

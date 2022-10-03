@@ -70,10 +70,16 @@
                         <Label id="CA_idLabelTextLPMEmail" text="{CEMAIL_URI}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnCountry" filterProperty="TCOUNTRY_CODE">
-                    <Label id="CA_idLabelCountry" text="Country"/>
+                <table:Column id="CA_idColumnCity" filterProperty="TREGION_CODE">
+                    <Label id="CA_idLabelCity" text="City"/>
                     <table:template>
-                        <Label id="CA_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
+                        <Label id="CA_idLabelTextCity" text="{TREGION_CODE}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnState" filterProperty="TREGION_CODE">
+                    <Label id="CA_idLabelState" text="State"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextState" text="{TREGION_CODE}"/>
                     </table:template>
                 </table:Column>
                 <table:Column id="CA_idColumnEquipType" filterProperty="EQUIPMENTTYPE">
