@@ -1,0 +1,112 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.drivers.AllDrivers" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <table:Table id="tAllDrivers" rows="{/mDataDrivers}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" visibleRowCount="14" ariaLabelledBy="title">
+            <table:extension>
+                <OverflowToolbar id="idOT">
+                    <ToolbarSpacer id="idTS"/>
+                    <SearchField id="idSearchManifiesto" placeholder="Buscar" value="{ui>/filterValue}" search="onHandleTxtFilter($event, 'idSearchManifiesto')" width="20rem"/>
+                    <Button id="idBtnAddDrivers" icon="sap-icon://add" press="onCreateDrivers" tooltip="Add">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLAddDrivers" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="idBtnEditDrivers" icon="sap-icon://edit" press="onEditDrivers" tooltip="Edit">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLEditDrivers" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="btnDownloadExcelDrivers" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        </layoutData>         
+                    </Button>
+                </OverflowToolbar>
+            </table:extension>
+            <table:noData>
+                <Link id="idLink" class="sapUiMediumMargin" text="No se encuentran datos"/>
+            </table:noData>
+            <table:columns>
+                <table:Column id="CA_idColumnMC" width="auto" filterProperty="CBP_UUID">
+                    <Label id="CA_idLabelMC" text="MC"/>
+                    <table:template>
+                        <Link id="CA_idLabelTextMC" text="{CBP_UUID}" press="onViewDrivers"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnDrivers" filterProperty="TBP_UUID">
+                    <Label id="CA_idLabelDrivers" text="Drivers"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextDrivers" text="{TBP_UUID}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnAddress" filterProperty="CFRMTD_PSTL_ADDR">
+                    <Label id="CA_idLabelAddress" text="Address"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextAddress" text="{CFRMTD_PSTL_ADDR}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnNPhone" filterProperty="CPHONE_NR">
+                    <Label id="CA_idLabelNPhone" text="Phone"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextPhone" text="{CPHONE_NR}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnContact" filterProperty="CONTACT">
+                    <Label id="CA_idLabelContact" text="Contact"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextContact" text="{CONTACT}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnLPMEmail" filterProperty="CEMAIL_URI">
+                    <Label id="CA_idLabelLPMEmail" text="LPM Email"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextLPMEmail" text="{CEMAIL_URI}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnCountry" filterProperty="TCOUNTRY_CODE">
+                    <Label id="CA_idLabelCountry" text="Country"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnEquipType" filterProperty="EQUIPMENTTYPE">
+                    <Label id="CA_idLabelEquipType" text="EquipType"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextEquipType" text="{EQUIPMENTTYPE}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnVans" width="4em" filterProperty="VANS">
+                    <Label id="CA_idLabelEquipVans" text="Vans"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextVans" text="{VANS}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnReefer" width="4em" filterProperty="REEFER">
+                    <Label id="CA_idLabelReefer" text="Reefer"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextReefer" text="{REEFER}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnFlatbed" width="4em" filterProperty="FLATBED">
+                    <Label id="CA_idLabelFlatbed" text="Flatbed"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextFlatbed" text="{FLATBED}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnStepDeck" width="4em" filterProperty="STEPDECK">
+                    <Label id="CA_idLabelStepDeck" text="StepDeck"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextStepDeck" text="{STEPDECK}"/>
+                    </table:template>
+                </table:Column>
+            </table:columns>
+        </table:Table>
+    </App>
+</mvc:View>

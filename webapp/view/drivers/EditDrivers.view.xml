@@ -1,0 +1,207 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.drivers.EditDrivers" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <Page showHeader="false">
+            <Toolbar id="idToolbar">
+                <Button id="idBtnBkNvoPeaje" type="Back" press="onBackReport"/>
+                <Text text="Drivers" />
+                <ToolbarSpacer  id="idTS2"/>
+                <Button id="btnSaveDrivers" icon="sap-icon://save" press="onSaveDrivers" visible="true"/>
+                <Button id="btnCancelEditDrivers" icon="sap-icon://reset" press="onCancelEditDrivers" visible="true"/>
+            </Toolbar>
+            <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+                <f:Form id="FormChange480_12120" editable="true">
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                            emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer title="General Informartion">
+                        <f:formElements>
+                            <f:FormElement label="MC">
+                                <f:fields>
+                                    <Input value="{/mDriversSelected/CBP_UUID}" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Name">
+                                <f:fields>
+                                    <Input value="{/mDriversSelected/TBP_UUID}" id="ca_name"/>
+                                </f:fields>
+                            </f:FormElement>                        
+                            <f:FormElement label="Tax ID">
+                                <f:fields>
+                                    <Input value="{TAXID}" type="Email"/>
+                                </f:fields>
+                            </f:FormElement>                            
+                            <f:FormElement label="DOT">
+                                <f:fields>
+                                    <Input value="{Sms}" type="Tel"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Last DOT Rating Update">
+                                <f:fields>
+                                    <Input value="{Sms}" type="Date"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Insurance Exp. Date">
+                                <f:fields>
+                                    <Input value="{Sms}" type="Date"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Factoring Company">
+                                <f:fields>
+                                    <Input value="{Sms}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Factoring Email">
+                                <f:fields>
+                                    <Input value="{Sms}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Equipmet Type">
+                                <f:fields>
+                                    <Input value="{Sms}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="QuickPay Discount">
+                                <f:fields>
+                                    <Input value="{Sms}" />
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                    <f:FormContainer title="Address">
+                        <f:formElements>
+                            <f:FormElement label="Address">
+                                <f:fields>
+                                    <Input value="{SupplierName}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="House Number/Street">
+                                <f:fields>
+                                    <Input value="{Street}">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                    <Input value="{HouseNumber}"/>
+                                        
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="City/State/ZIP">
+                                <f:fields>
+                                    <Input value="{City}" />
+                                    <Input value="{City}" />
+                                    <Input value="{ZIPCode}">
+                                        <layoutData>
+                                            <l:GridData span="XL3 L3 M3 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Country">
+                                <f:fields>
+                                    <Select id="country" selectedKey="{Country}" items="{/mDataCountry}">
+                                        <items>
+                                            <core:Item text="{name}" key="{key}"/>
+                                        </items>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>                            
+                            <f:FormElement label="Tel.">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Tel"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Contact">
+                                <f:fields>
+                                    <Input value="{Tel}"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="EMail">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Email"/>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                    <f:FormContainer title="Units">
+                        <f:formElements>
+                            <f:FormElement label="Number Of Vans">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Number">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Number Of Vans">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Integer">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Number Of Refers">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Integer">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Number Of StepDecks">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Integer">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+                </f:Form>
+                <Panel id="ca_pOthers" class="sapUiSmallMargin" headerText="{i18n>others}">
+                    <IconTabBar id="ca_itbOthers" class="sapUiContentPadding" expandable="false">
+                        <items>
+                            <IconTabFilter text="{i18n>notes}" key="info">
+                                <f:SimpleForm id="ca_sfViewNotes"
+                                    editable="false"
+                                    layout="ColumnLayout"
+                                    showHeader="false"
+                                    columnsM="1"
+                                    columnsL="1"
+                                    columnsXL="1">
+                                    <f:content>
+                                        <core:Title text="{i18n>Notes}"/>
+                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}" editable="true"/>
+                                    </f:content>
+                                </f:SimpleForm>
+                            </IconTabFilter>
+                            <IconTabFilter text="{i18n>Attachments}" key="info">
+                                <table:Table>
+                                    <table:noData>
+                                        <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
+                                    </table:noData>
+                                </table:Table>
+                            </IconTabFilter>
+                        </items>
+                    </IconTabBar>
+                </Panel>
+            </VBox>
+        </Page>
+    </App>
+</mvc:View>
