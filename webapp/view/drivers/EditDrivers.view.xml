@@ -35,24 +35,10 @@
                                     <Input value="{/mDriversSelected/TBP_UUID}" id="ca_name"/>
                                 </f:fields>
                             </f:FormElement>                        
-                            <f:FormElement label="Tax ID">
+
+                            <f:FormElement label="Sales Man">
                                 <f:fields>
-                                    <Input value="{TAXID}" type="Email"/>
-                                </f:fields>
-                            </f:FormElement>                            
-                            <f:FormElement label="DOT">
-                                <f:fields>
-                                    <Input value="{Sms}" type="Tel"/>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Last DOT Rating Update">
-                                <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Insurance Exp. Date">
-                                <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
+                                    <Input value="{/mDriversSelected/TBP_UUID}" id="ca_employeeresponsable"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Factoring Company">
@@ -60,17 +46,7 @@
                                     <Input value="{Sms}" />
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Factoring Email">
-                                <f:fields>
-                                    <Input value="{Sms}" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Equipmet Type">
-                                <f:fields>
-                                    <Input value="{Sms}" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="QuickPay Discount">
+                            <f:FormElement label="Term">
                                 <f:fields>
                                     <Input value="{Sms}" />
                                 </f:fields>
@@ -115,7 +91,17 @@
                                     </Select>
                                 </f:fields>
                             </f:FormElement>                            
-                            <f:FormElement label="Tel.">
+                            <f:FormElement label="Phone.">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Tel"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Mobile Phone.">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Tel"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Fax.">
                                 <f:fields>
                                     <Input value="{Tel}" type="Tel"/>
                                 </f:fields>
@@ -125,53 +111,19 @@
                                     <Input value="{Tel}"/>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="EMail">
+                            <f:FormElement label="Accounting Email">
+                                <f:fields>
+                                    <Input value="{Tel}" type="Email"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Notification Email">
                                 <f:fields>
                                     <Input value="{Tel}" type="Email"/>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
                     </f:FormContainer>
-                    <f:FormContainer title="Units">
-                        <f:formElements>
-                            <f:FormElement label="Number Of Vans">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Number">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Vans">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Refers">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of StepDecks">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                        </f:formElements>
-                    </f:FormContainer>
+
                 </f:formContainers>
                 </f:Form>
                 <Panel id="ca_pOthers" class="sapUiSmallMargin" headerText="{i18n>others}">
