@@ -32,23 +32,32 @@
                             </f:FormElement>
                             <f:FormElement label="Name">
                                 <f:fields>
-                                    <Input value="{/mDriversSelected/TBP_UUID}" id="ca_name"/>
+                                    <Input value="{/mDriversSelected/TBP_UUID}" id="dr_name"/>
                                 </f:fields>
                             </f:FormElement>                        
 
                             <f:FormElement label="Sales Man">
                                 <f:fields>
-                                    <Input value="{/mDriversSelected/TBP_UUID}" id="ca_employeeresponsable"/>
+                                    <Input value="{/mDriversSelected/TBP_UUID}" id="dr_employeeresponsable"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Factoring Company">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{invoice}" />
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Term">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{terms}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Status">
+                                <f:fields>
+                                    <Select id="status" selectedKey="{Status}" items="{/mDataStatus}">
+                                        <items>
+                                            <core:Item text="{name}" key="{key}" value="{TSTATUS}"/>
+                                        </items>
+                                    </Select>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
@@ -113,12 +122,12 @@
                             </f:FormElement>
                             <f:FormElement label="Accounting Email">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Email"/>
+                                    <Input value="{Tel}" type="Email" required="true"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Notification Email">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Email"/>
+                                    <Input value="{Tel}" type="Email" required="true"/>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>

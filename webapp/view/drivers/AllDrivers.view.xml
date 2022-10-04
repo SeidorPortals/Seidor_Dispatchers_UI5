@@ -34,78 +34,58 @@
                 <Link id="idLink" class="sapUiMediumMargin" text="No se encuentran datos"/>
             </table:noData>
             <table:columns>
-                <table:Column id="CA_idColumnMC" width="auto" filterProperty="CBP_UUID">
-                    <Label id="CA_idLabelMC" text="MC"/>
+                <table:Column id="DR_idColumnMC" width="auto" filterProperty="CBP_UUID">
+                    <Label id="DR_idLabelMC" text="MC"/>
                     <table:template>
-                        <Link id="CA_idLabelTextMC" text="{CBP_UUID}" press="onViewDrivers"/>
+                        <Link id="DR_idLabelTextMC" text="{CBP_UUID}" press="onViewDrivers"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnDrivers" filterProperty="TBP_UUID">
-                    <Label id="CA_idLabelDrivers" text="Drivers"/>
+                <table:Column id="DR_idColumnDrivers" filterProperty="TBP_UUID">
+                    <Label id="DR_idLabelDrivers" text="Drivers"/>
                     <table:template>
-                        <Label id="CA_idLabelTextDrivers" text="{TBP_UUID}"/>
+                        <Label id="DR_idLabelTextDrivers" text="{TBP_UUID}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnAddress" filterProperty="CFRMTD_PSTL_ADDR">
-                    <Label id="CA_idLabelAddress" text="Address"/>
+                <table:Column id="DR_idColumnAddress" filterProperty="CFRMTD_PSTL_ADDR">
+                    <Label id="DR_idLabelAddress" text="Address"/>
                     <table:template>
-                        <Label id="CA_idLabelTextAddress" text="{CFRMTD_PSTL_ADDR}"/>
+                        <Label id="DR_idLabelTextAddress" text="{CFRMTD_PSTL_ADDR}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnNPhone" filterProperty="CPHONE_NR">
-                    <Label id="CA_idLabelNPhone" text="Phone"/>
+                <table:Column id="DR_idColumnNPhone" filterProperty="CPHONE_NR">
+                    <Label id="DR_idLabelNPhone" text="Phone"/>
                     <table:template>
-                        <Label id="CA_idLabelTextPhone" text="{CPHONE_NR}"/>
+                        <Label id="DR_idLabelTextPhone" text="{CPHONE_NR}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnContact" filterProperty="CONTACT">
-                    <Label id="CA_idLabelContact" text="Contact"/>
+                <table:Column id="DR_idColumnContact" filterProperty="CONTACT">
+                    <Label id="DR_idLabelContact" text="Contact"/>
                     <table:template>
-                        <Label id="CA_idLabelTextContact" text="{CONTACT}"/>
+                        <Label id="DR_idLabelTextContact" text="{CONTACT}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnLPMEmail" filterProperty="CEMAIL_URI">
-                    <Label id="CA_idLabelLPMEmail" text="LPM Email"/>
+                <table:Column id="DR_idColumnLPMEmail" filterProperty="CEMAIL_URI">
+                    <Label id="DR_idLabelLPMEmail" text="Email"/>
                     <table:template>
-                        <Label id="CA_idLabelTextLPMEmail" text="{CEMAIL_URI}"/>
+                        <Label id="DR_idLabelTextLPMEmail" text="{CEMAIL_URI}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnCountry" filterProperty="TCOUNTRY_CODE">
-                    <Label id="CA_idLabelCountry" text="Country"/>
+                <table:Column id="DR_idColumnCountry" filterProperty="TCOUNTRY_CODE">
+                    <Label id="DR_idLabelCountry" text="Country"/>
                     <table:template>
-                        <Label id="CA_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
+                        <Label id="DR_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnEquipType" filterProperty="EQUIPMENTTYPE">
-                    <Label id="CA_idLabelEquipType" text="EquipType"/>
+                <table:Column id="DR_idColumnStatus" filterProperty="TSTATUS">
+                    <Label id="DR_idLabelStatus" text="Status"/>
                     <table:template>
-                        <Label id="CA_idLabelTextEquipType" text="{EQUIPMENTTYPE}"/>
+                        <Label id="DR_idLabelTextStatus" text="{TSTATUS}"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="CA_idColumnVans" width="4em" filterProperty="VANS">
-                    <Label id="CA_idLabelEquipVans" text="Vans"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextVans" text="{VANS}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column id="CA_idColumnReefer" width="4em" filterProperty="REEFER">
-                    <Label id="CA_idLabelReefer" text="Reefer"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextReefer" text="{REEFER}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column id="CA_idColumnFlatbed" width="4em" filterProperty="FLATBED">
-                    <Label id="CA_idLabelFlatbed" text="Flatbed"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextFlatbed" text="{FLATBED}"/>
-                    </table:template>
-                </table:Column>
-                <table:Column id="CA_idColumnStepDeck" width="4em" filterProperty="STEPDECK">
-                    <Label id="CA_idLabelStepDeck" text="StepDeck"/>
-                    <table:template>
-                        <Label id="CA_idLabelTextStepDeck" text="{STEPDECK}"/>
-                    </table:template>
-                </table:Column>
+                
+               
+               
+               
             </table:columns>
         </table:Table>
     </App>

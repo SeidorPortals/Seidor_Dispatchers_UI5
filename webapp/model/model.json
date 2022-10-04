@@ -47,10 +47,28 @@
         "vTabView" : false,
         "edit" : false
     },
+    "mPropertyDrivers" : {
+        "vTabAll" : true,
+        "vTabCreate" : true,
+        "vTabView" : false,
+        "edit" : false
+    },
     
     "mDataCarriers" : [],
     "mCarrierSelected" : {
     },
+    "mDataDrivers" : [
+        {
+            "CBP_UUID" : "1000733",
+            "TBP_UUID" : "ULISES F ALVAREZ",
+            "CFRMTD_PSTL_ADDR" : "3313 21st ST W / LEHIGH ACRES FL 33971 / US",
+            "CPHONE_NR" : "99999999",
+            "CONTACT" : "PLASTIC EXPRESS POOLER GA",
+            "CEMAIL_URI" : "test@utb.com",
+            "TCOUNTRY_CODE" : "United States",
+            "TSTATUS" : "Active"
+        }
+    ],
     "mDataTrips" : [
         {
             "ID" : "1000001",
@@ -817,5 +835,9 @@
         {"key":"ZA","name":"South Africa"},
         {"key":"ZM","name":"Zambia"},
         {"key":"ZW","name":"Zimbabwe"}
+    ],
+    "mDataStatus" : [
+        {"key":"2","name":"Active"},
+        {"key":"1","name":"Cancel"}
     ]
 }
