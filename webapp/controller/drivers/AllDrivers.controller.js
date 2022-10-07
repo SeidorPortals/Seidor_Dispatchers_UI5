@@ -14,6 +14,20 @@ sap.ui.define([
             this._getModel().setProperty("/mPropertyDrivers/vTabCreate", true);
         },
 
+        onEditDrivers: function() {
+            debugger;
+            let oModel = this._getModel();
+            let _itemSelected = this.byId("tAllDrivers").getSelectedIndex();
+            if(_itemSelected !== -1){
+                let _itemsTable = this.byId("tAllDrivers").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mDriversSelected",oModel.getProperty("/mDataDrivers")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyDrivers/vTabAll", false);
+                oModel.setProperty("/mPropertyDrivers/vTabCreate", true);
+            }else{
+                MessageBox.warning("Select a record.")
+            }            
+        },
+
 		/* _getModel
 		 * @returns {sap.ui.model.Model} the model instance
 		 * Convenience method for getting the view model by name in every controller of the application.

@@ -69,6 +69,18 @@
             "TSTATUS" : "Active"
         }
     ],
+    "mDriversSelected" : [
+        {
+            "CBP_UUID" : "1000733",
+            "TBP_UUID" : "ULISES F ALVAREZ",
+            "CFRMTD_PSTL_ADDR" : "3313 21st ST W / LEHIGH ACRES FL 33971 / US",
+            "CPHONE_NR" : "99999999",
+            "CONTACT" : "PLASTIC EXPRESS POOLER GA",
+            "CEMAIL_URI" : "test@utb.com",
+            "TCOUNTRY_CODE" : "United States",
+            "TSTATUS" : "Active"
+        }
+    ],
     "mDataTrips" : [
         {
             "ID" : "1000001",
