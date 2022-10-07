@@ -10,8 +10,8 @@ sap.ui.define([
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", false);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", true);
+            this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
         },
 
         onEditDrivers: function() {
