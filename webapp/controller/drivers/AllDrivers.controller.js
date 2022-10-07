@@ -14,6 +14,12 @@ sap.ui.define([
             this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
         },
 
+        onCreateDrivers: function() {
+            this._getModel().setProperty("/mPropertyDrivers/vTabAll", false);
+            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", true);
+        },
+
+
         onEditDrivers: function() {
             debugger;
             let oModel = this._getModel();

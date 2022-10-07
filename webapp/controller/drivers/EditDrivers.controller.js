@@ -11,7 +11,7 @@ sap.ui.define([
 
         onBackReport: function() {
             this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", true);
+            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
         },
 
 		/* _getModel
