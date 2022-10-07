@@ -37,32 +37,32 @@
                             </f:FormElement>                        
                             <f:FormElement label="Make">
                                 <f:fields>
-                                    <Input value="{Make}"/>
+                                    <Input value="{/mTrailerSelected/Make}"/>
                                 </f:fields>
                             </f:FormElement>                            
                             <f:FormElement label="Owner">
                                 <f:fields>
-                                    <Input value="{Owner}"/>
+                                    <Input value="{/mTrailerSelected/IDNumber}"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Year">
                                 <f:fields>
-                                    <Input value="{Year}"/>
+                                    <Input value="{/mTrailerSelected/IDNumber}"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="ID Number">
                                 <f:fields>
-                                    <Input value="{IDNumber}"/>
+                                    <Input value="{/mTrailerSelected/IDNumber}"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="License PLate">
                                 <f:fields>
-                                    <Input value="{LicensePLate}" />
+                                    <Input value="{/mTrailerSelected/LicensePLate}" />
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="License Exp. Date">
                                 <f:fields>
-                                    <Input value="{LicenseExpDate}" type="Date"/>
+                                    <Input value="{/mTrailerSelected/LicenseExpDate}" type="Date"/>
                                 </f:fields>
                             </f:FormElement>                            
                         </f:formElements>
@@ -71,17 +71,17 @@
                         <f:formElements>
                             <f:FormElement label="Annual Inspection">
                                 <f:fields>
-                                    <Input value="{LicenseExpDate}" type="Date"/>
+                                    <Input value="{/mTrailerSelected/AnnualInspection}" type="Date"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Physical Damage">
                                 <f:fields>
-                                    <Input value="{PhysicalDamage}" />
+                                    <Input value="{/mTrailerSelected/PhysicalDamage}" />
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Roof Type">
                                 <f:fields>
-                                    <Select id="RoofType" selectedKey="{RoofType}" items="{/mDataRoofType}">
+                                    <Select id="RoofType" selectedKey="{/mTrailerSelected/RoofType}" items="{/mDataRoofType}">
                                         <items>
                                             <core:Item text="{Description}" key="{ID}"/>
                                         </items>
@@ -90,8 +90,8 @@
                             </f:FormElement>
                             <f:FormElement label="Weight">
                                 <f:fields>
-                                     <Input value="{Weight}" type="Number"/>
-                                    <Select id="WeightUnit" selectedKey="{WeightUnit}" items="{/mDataWeightUnit}">
+                                     <Input value="{/mTrailerSelected/Weight}" type="Number"/>
+                                    <Select id="WeightUnit" selectedKey="{/mTrailerSelected/WeightUnit}" items="{/mDataWeightUnit}">
                                         <items>
                                             <core:Item text="{Description}" key="{UnitCode}"/>
                                         </items>
@@ -100,9 +100,9 @@
                             </f:FormElement>
                             <f:FormElement label="Extras">
                                 <f:fields>
-                                    <CheckBox text="Ventilation" selected="{/Ventilation}"/>
-		                            <CheckBox text="Air" selected="{/Air}" />
-		                            <CheckBox text="Wheel Reposition" selected="{/Wheel Reposition}"/>
+                                    <CheckBox text="Ventilation" selected="{/mTrailerSelected/Ventilation}"/>
+		                            <CheckBox text="Air" selected="{/mTrailerSelected/Air}" />
+		                            <CheckBox text="Wheel Reposition" selected="{/mTrailerSelected/Wheel Reposition}"/>
                                 </f:fields>
                             </f:FormElement>                            
                         </f:formElements>
@@ -122,7 +122,7 @@
                                     columnsXL="2">
                                     <f:content>
                                         <core:Title text="{i18n>Notes}"/>
-                                        <TextArea rows="6" value="{/mTripSelected/SpecialInstructions}" editable="true"/>
+                                        <TextArea rows="6" value="{/mTrailerSelected/Notes}" editable="true"/>
                                     </f:content>
                                 </f:SimpleForm>
                             </IconTabFilter>

@@ -6,7 +6,7 @@ sap.ui.define([
 ], function (Controller, Util) {
 	"use strict";
 	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.equipmenttype.EquipmentTypePage", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.consignee.ConsigneePage", {
         ByDCarrier : "/BYD_QA",
 
         onInit: function(){            
@@ -21,30 +21,30 @@ sap.ui.define([
 		},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabAll", true);
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabCreate", false);            
+            this._getModel().setProperty("/mPropertyConsignee/vTabAll", true);
+            this._getModel().setProperty("/mPropertyConsignee/vTabCreate", false);            
         },
         
         onUsageServiceCarrier: function(){
-            /*Util._showBI(true);
+            Util._showBI(true);
             var that = this;
             jQuery.ajax({
                 async: false,
-                url: `${this.ByDCarrier}/cust/v1/manageequipmenttype/ZBO_EquipmentTypeRootCollection?$format=json`,
+                url: `${this.ByDCarrier}/cust/v1/manageConsignee/ZBO_ConsigneeRootCollection?$format=json`,
                 method: "GET",
                 dataType : "json",
                 headers: {
                     Authorization: "Basic bGFyZ3VlZGFzOlNlaWRvcjIz"
                 },
                 success: function (oData) {
-                    that._getModel().setProperty("/mDataEquipmentType",oData.d.results);
+                    that._getModel().setProperty("/mDataConsignee",oData.d.results);
                     console.log("OK");
                 },
                 error: function (err) {
                     console.error(err);
                 }
             });
-            Util._showBI(false);*/
+            Util._showBI(false);
         },
 		
 		/* _getCore

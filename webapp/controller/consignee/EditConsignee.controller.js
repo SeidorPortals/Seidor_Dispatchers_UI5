@@ -3,12 +3,12 @@ sap.ui.define([
 ], function(Controller) {
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.shipper.EditShipper", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.consignee.EditConsignee", {
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyShipper/vTabAll", true);
-            this._getModel().setProperty("/mPropertyShipper/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyConsignee/vTabAll", true);
+            this._getModel().setProperty("/mPropertyConsignee/vTabCreate", false);
         },
 
 		/* _getModel

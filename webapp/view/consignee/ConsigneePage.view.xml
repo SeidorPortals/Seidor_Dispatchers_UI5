@@ -1,0 +1,26 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.consignee.ConsigneePage" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <pages>
+			<Page id="idPage" title="Consignee">
+                <IconTabBar id="idIconTabBarConsignee" class="sapUiContentPadding" expandable="false">
+                    <items>
+                        <IconTabFilter id="idTabAllConsignee" icon="sap-icon://instance" visible="{/mPropertyConsignee/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllConsignee" viewName="com.seidor.usa.dispatchers.view.consignee.AllConsignee"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateConsignee" icon="sap-icon://create-form" visible="{/mPropertyConsignee/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditConsignee" viewName="com.seidor.usa.dispatchers.view.consignee.EditConsignee"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+			</Page>
+		</pages>
+    </App>
+</mvc:View>

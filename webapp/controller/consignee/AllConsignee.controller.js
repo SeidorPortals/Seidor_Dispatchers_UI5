@@ -7,31 +7,30 @@ sap.ui.define([
 ], function(Controller, Util, JSONModel, Filter, MessageBox){
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.equipmenttype.AllEquipmentType", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.consignee.AllConsignee", {
         onInit: function () {
         },
 
-        onCreateEquipmentType: function() {
-            this._getModel().setProperty("/mEquipmentTypeSelected",[]);
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabAll", false);
-            this._getModel().setProperty("/mPropertyEquipmentType/vTabCreate", true);
+        onCreateConsignee: function() {
+            this._getModel().setProperty("/mPropertyConsignee/vTabAll", false);
+            this._getModel().setProperty("/mPropertyConsignee/vTabCreate", true);
         },
 
-        onEditEquipmentType: function() {
-            //debugger;
+        onEditConsignee: function() {
+            debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllEquipmentType").getSelectedIndex();
+            let _itemSelected = this.byId("tAllConsignee").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllEquipmentType").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mEquipmentTypeSelected",oModel.getProperty("/mDataEquipmentType")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyEquipmentType/vTabAll", false);
-                oModel.setProperty("/mPropertyEquipmentType/vTabCreate", true);
+                let _itemsTable = this.byId("tAllConsignee").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mConsigneeSelected",oModel.getProperty("/mDataConsignee")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyConsignee/vTabAll", false);
+                oModel.setProperty("/mPropertyConsignee/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            
         },
 
-        onCopyEquipType: function() {
+        onCopyConsignee: function() {
             console.log("Medoto Copy");
         },
 
