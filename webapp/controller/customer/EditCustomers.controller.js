@@ -6,12 +6,12 @@ sap.ui.define([
 ], function (Controller, Util) {
 	"use strict";
 	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.EditDriversPage", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.customer.EditCustomersPage", {
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyCustomers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyCustomers/vTabCreate", false);
         },
 
 		/* _getModel

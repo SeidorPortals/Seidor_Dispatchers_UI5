@@ -38,6 +38,11 @@
             "visible" : true,
             "items" : [
                 {
+                    "title" : "Customer",
+                    "key" : "customersPage",
+                    "icon": "sap-icon://instance"
+                },
+                {
                     "title" : "Shipper",
                     "key" : "shipperPage",
                     "icon": "sap-icon://instance"
@@ -103,7 +108,7 @@
         "vTabCreate" : false,
         "edit" : false
     },
-    "mPropertyDrivers" : {
+    "mPropertyCustomers" : {
         "vTabAll" : true,
         "vTabCreate" : true,
         "vTabView" : false,
@@ -234,7 +239,7 @@
     "mPickUpSelected" : {},
     "mDeliverySelected" : {},
     "mCarrierCostSelected" : {},
-    "mDataDrivers" : [
+    "mDataCustomers" : [
         {
             "CBP_UUID" : "1000733",
             "TBP_UUID" : "ULISES F ALVAREZ",
@@ -246,7 +251,7 @@
             "TSTATUS" : "Active"
         }
     ],
-    "mDriversSelected" :
+    "mCustomerSelected" :
         {
             "CBP_UUID" : "1000733",
             "TBP_UUID" : "ULISES F ALVAREZ",

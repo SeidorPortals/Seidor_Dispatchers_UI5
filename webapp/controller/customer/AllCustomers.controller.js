@@ -6,29 +6,30 @@ sap.ui.define([
 ], function (Controller, Util) {
 	"use strict";
 	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.AllDriversPage", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.customer.AllCustomersPage", {
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyCustomers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyCustomers/vTabCreate", false);
         },
 
-        onCreateDrivers: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", false);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", true);
+        onCreateCustomers: function() {
+            this._getModel().setProperty("/mCustomerSelected",[]);
+            this._getModel().setProperty("/mPropertyCustomers/vTabAll", false);
+            this._getModel().setProperty("/mPropertyCustomers/vTabCreate", true);
         },
 
 
-        onEditDrivers: function() {
+        onEditCustomers: function() {
             debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllDrivers").getSelectedIndex();
+            let _itemSelected = this.byId("tAllCustomers").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllDrivers").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mDriversSelected",oModel.getProperty("/mDataDrivers")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyDrivers/vTabAll", false);
-                oModel.setProperty("/mPropertyDrivers/vTabCreate", true);
+                let _itemsTable = this.byId("tAllCustomers").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mCustomerSelected",oModel.getProperty("/mDataCustomers")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyCustomers/vTabAll", false);
+                oModel.setProperty("/mPropertyCustomers/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            

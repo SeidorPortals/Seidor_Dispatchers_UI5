@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.drivers.AllDrivers" 
+	controllerName="com.seidor.usa.dispatchers.controller.customer.AllCustomers" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 
@@ -8,22 +8,22 @@
 	xmlns="sap.m" 
 	class="sapUiSizeCompact">
     <App>
-        <table:Table id="tAllDrivers" rows="{/mDataDrivers}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" visibleRowCount="14" ariaLabelledBy="title">
+        <table:Table id="tAllCustomers" rows="{/mDataCustomers}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" visibleRowCount="14" ariaLabelledBy="title">
             <table:extension>
                 <OverflowToolbar id="idOT">
                     <ToolbarSpacer id="idTS"/>
                     <SearchField id="idSearchManifiesto" placeholder="Buscar" value="{ui>/filterValue}" search="onHandleTxtFilter($event, 'idSearchManifiesto')" width="20rem"/>
-                    <Button id="idBtnAddDrivers" icon="sap-icon://add" press="onCreateDrivers" tooltip="Add">
+                    <Button id="idBtnAddCustomers" icon="sap-icon://add" press="onCreateCustomers" tooltip="Add">
                         <layoutData>
-                            <OverflowToolbarLayoutData id="idOTLAddDrivers" priority="NeverOverflow"/>
+                            <OverflowToolbarLayoutData id="idOTLAddCustomers" priority="NeverOverflow"/>
                         </layoutData>
                     </Button>
-                    <Button id="idBtnEditDrivers" icon="sap-icon://edit" press="onEditDrivers" tooltip="Edit">
+                    <Button id="idBtnEditCustomers" icon="sap-icon://edit" press="onEditCustomers" tooltip="Edit">
                         <layoutData>
-                            <OverflowToolbarLayoutData id="idOTLEditDrivers" priority="NeverOverflow"/>
+                            <OverflowToolbarLayoutData id="idOTLEditCustomers" priority="NeverOverflow"/>
                         </layoutData>
                     </Button>
-                    <Button id="btnDownloadExcelDrivers" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
+                    <Button id="btnDownloadExcelCustomers" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
                         <layoutData>
                             <OverflowToolbarLayoutData priority="NeverOverflow"/>
                         </layoutData>         
@@ -37,13 +37,13 @@
                 <table:Column id="DR_idColumnMC" width="auto" filterProperty="CBP_UUID">
                     <Label id="DR_idLabelMC" text="MC"/>
                     <table:template>
-                        <Link id="DR_idLabelTextMC" text="{CBP_UUID}" press="onViewDrivers"/>
+                        <Link id="DR_idLabelTextMC" text="{CBP_UUID}" press="onViewCustomers"/>
                     </table:template>
                 </table:Column>
-                <table:Column id="DR_idColumnDrivers" filterProperty="TBP_UUID">
-                    <Label id="DR_idLabelDrivers" text="Drivers"/>
+                <table:Column id="DR_idColumnCustomers" filterProperty="TBP_UUID">
+                    <Label id="DR_idLabelCustomers" text="Customers"/>
                     <table:template>
-                        <Label id="DR_idLabelTextDrivers" text="{TBP_UUID}"/>
+                        <Label id="DR_idLabelTextCustomers" text="{TBP_UUID}"/>
                     </table:template>
                 </table:Column>
                 <table:Column id="DR_idColumnAddress" filterProperty="CFRMTD_PSTL_ADDR">
