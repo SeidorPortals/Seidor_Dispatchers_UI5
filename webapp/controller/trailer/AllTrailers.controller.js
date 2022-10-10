@@ -12,6 +12,7 @@ sap.ui.define([
         },
 
         onCreateTrailer: function() {
+            this._getModel().setProperty("/mTrailerSelected",[]);
             this._getModel().setProperty("/mPropertyTrailers/vTabAll", false);
             this._getModel().setProperty("/mPropertyTrailers/vTabCreate", true);
         },
