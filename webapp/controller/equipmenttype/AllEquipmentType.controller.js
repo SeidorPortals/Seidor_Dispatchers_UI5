@@ -7,31 +7,31 @@ sap.ui.define([
 ], function(Controller, Util, JSONModel, Filter, MessageBox){
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.carriers.AllCarriers", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.equipmenttype.AllEquipmentType", {
         onInit: function () {
         },
 
-        onCreateCarrier: function() {
-            this._getModel().setProperty("/mCarrierSelected",[]);
-            this._getModel().setProperty("/mPropertyCarriers/vTabAll", false);
-            this._getModel().setProperty("/mPropertyCarriers/vTabCreate", true);
+        onCreateEquipmentType: function() {
+            this._getModel().setProperty("/mEquipmentTypeSelected",[]);
+            this._getModel().setProperty("/mPropertyEquipmentType/vTabAll", false);
+            this._getModel().setProperty("/mPropertyEquipmentType/vTabCreate", true);
         },
 
-        onEditCarrier: function() {
-            debugger;
+        onEditEquipmentType: function() {
+            //debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllCarriers").getSelectedIndex();
+            let _itemSelected = this.byId("tAllEquipmentType").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllCarriers").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mCarrierSelected",oModel.getProperty("/mDataCarriers")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyCarriers/vTabAll", false);
-                oModel.setProperty("/mPropertyCarriers/vTabCreate", true);
+                let _itemsTable = this.byId("tAllEquipmentType").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mEquipmentTypeSelected",oModel.getProperty("/mDataEquipmentType")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyEquipmentType/vTabAll", false);
+                oModel.setProperty("/mPropertyEquipmentType/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            
         },
 
-        onCopyCarrier: function() {
+        onCopyEquipType: function() {
             console.log("Medoto Copy");
         },
 

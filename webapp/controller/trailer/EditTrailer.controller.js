@@ -1,17 +1,14 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"com/seidor/usa/dispatchers/util/Util",
-	"sap/ui/model/json/JSONModel",
-	"sap/ui/model/Filter",
-], function (Controller, Util) {
-	"use strict";
-	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.EditDriversPage", {
+    "sap/ui/core/mvc/Controller"
+], function(Controller) {
+    'use strict';
+
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trailer.EditTrailer", {
         onInit: function() {},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyTrailers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyTrailers/vTabCreate", false);
         },
 
 		/* _getModel
@@ -37,6 +34,5 @@ sap.ui.define([
 		_getController: function () {
 			return this.getView().getController();
 		}
-       // 
     });
 });

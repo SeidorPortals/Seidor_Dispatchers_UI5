@@ -1,0 +1,100 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.trailer.AllTrailers" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <table:Table id="tAllTrailers" rows="{/mDataTrailers}" selectionMode="single" selectionBehavior="RowOnly" selectionChange="onSaveToll" visibleRowCount="14" ariaLabelledBy="title">
+            <table:extension>
+                <OverflowToolbar id="idOT">
+                    <ToolbarSpacer id="idTS"/>
+                    <SearchField id="idSearchManifiesto" placeholder="Buscar" value="{ui>/filterValue}" search="onHandleTxtFilter($event, 'idSearchManifiesto')" width="20rem"/>
+                    <Button id="idBtnAddTrailer" icon="sap-icon://add" press="onCreateTrailer" tooltip="Add">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLAddTrailer" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="idBtnEditTrailer" icon="sap-icon://edit" press="onEditTrailer" tooltip="Edit">
+                        <layoutData>
+                            <OverflowToolbarLayoutData id="idOTLEditTrailer" priority="NeverOverflow"/>
+                        </layoutData>
+                    </Button>
+                    <Button id="btnDownloadExcelTrailer" icon="sap-icon://excel-attachment" press="onExportExcel" tooltip="Export Excel">
+                        <layoutData>
+                            <OverflowToolbarLayoutData priority="NeverOverflow"/>
+                        </layoutData>         
+                    </Button>
+                </OverflowToolbar>
+            </table:extension>
+            <table:noData>
+                <Link id="idLink" class="sapUiMediumMargin" text="No se encuentran datos"/>
+            </table:noData>
+            <table:columns>
+                <table:Column id="CA_idColumnNumber" width="auto" filterProperty="Number">
+                    <Label id="CA_idLabelNumber" text="Number"/>
+                    <table:template>
+                        <Link id="CA_idLabelTextNumber" text="{Number}" press="onViewTrailer"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnType" filterProperty="Type">
+                    <Label id="CA_idLabelType" text="Type"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextType" text="{Type}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnMake" filterProperty="Make">
+                    <Label id="CA_idLabelMake" text="Make"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextMake" text="{Make}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnNOwner" filterProperty="Owner">
+                    <Label id="CA_idLabelNOwner" text="Owner"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextOwner" text="{COwner_NR}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnYear" filterProperty="Year">
+                    <Label id="CA_idLabelYear" text="Year"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextYear" text="{Year}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnIDNumber" filterProperty="ID Number">
+                    <Label id="CA_idLabelIDNumber" text="ID Number"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextIDNumber" text="{IDNumber}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnCountry" filterProperty="License Plate">
+                    <Label id="CA_idLabelCountry" text="Country"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextCountry" text="{TCOUNTRY_CODE}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnLicenseExpiresDate" filterProperty="License Expires Date">
+                    <Label id="CA_idLabelLicenseExpiresDate" text="License Expires Date"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextLicenseExpiresDate" text="{LicenseExpiresDate}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnInsurance" width="4em" filterProperty="Insurance">
+                    <Label id="CA_idLabelInsurance" text="Insurance"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextInsurance" text="{Insurance}"/>
+                    </table:template>
+                </table:Column>
+                <table:Column id="CA_idColumnRoofType" width="4em" filterProperty="Roof Type">
+                    <Label id="CA_idLabelRoofType" text="Roof Type"/>
+                    <table:template>
+                        <Label id="CA_idLabelTextRoofType" text="{RoofType}"/>
+                    </table:template>
+                </table:Column>
+            </table:columns>
+        </table:Table>
+    </App>
+</mvc:View>

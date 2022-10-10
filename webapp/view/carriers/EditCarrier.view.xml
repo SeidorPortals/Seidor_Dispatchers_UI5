@@ -37,42 +37,46 @@
                             </f:FormElement>                        
                             <f:FormElement label="Tax ID">
                                 <f:fields>
-                                    <Input value="{TAXID}" type="Email"/>
+                                    <Input value="{/mCarrierSelected/TAXID}" type="Email"/>
                                 </f:fields>
                             </f:FormElement>                            
                             <f:FormElement label="DOT">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Tel"/>
+                                    <Input value="{/mCarrierSelected/Sms}" type="Tel"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Last DOT Rating Update">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
+                                    <Input value="{/mCarrierSelected/Sms}" type="Date"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Insurance Exp. Date">
                                 <f:fields>
-                                    <Input value="{Sms}" type="Date"/>
+                                    <Input value="{/mCarrierSelected/Sms}" type="Date"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Factoring Company">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{/mCarrierSelected/Sms}" />
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Factoring Email">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{/mCarrierSelected/Sms}" placeholder="mail@mail.com"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Equipmet Type">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Select id="EquipmetType" selectedKey="{/mCarrierSelected/EquipmentType}" items="{/mDataEquipmentType}">
+                                        <items>
+                                            <core:Item text="{Description}" key="{ID}"/>
+                                        </items>
+                                    </Select>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="QuickPay Discount">
                                 <f:fields>
-                                    <Input value="{Sms}" />
+                                    <Input value="{/mCarrierSelected/Sms}" />
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
@@ -81,25 +85,25 @@
                         <f:formElements>
                             <f:FormElement label="Address">
                                 <f:fields>
-                                    <Input value="{SupplierName}" />
+                                    <Input value="{/mCarrierSelected/SupplierName}" />
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="House Number/Street">
                                 <f:fields>
-                                    <Input value="{Street}">
+                                    <Input value="{/mCarrierSelected/Street}">
                                     <layoutData>
                                             <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
+                                    </layoutData>
                                     </Input>
-                                    <Input value="{HouseNumber}"/>
+                                    <Input value="{/mCarrierSelected/HouseNumber}"/>
                                         
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="City/State/ZIP">
                                 <f:fields>
-                                    <Input value="{City}" />
-                                    <Input value="{City}" />
-                                    <Input value="{ZIPCode}">
+                                    <Input value="{/mCarrierSelected/City}" />
+                                    <Input value="{/mCarrierSelected/State}" />
+                                    <Input value="{/mCarrierSelected/ZIPCode}">
                                         <layoutData>
                                             <l:GridData span="XL3 L3 M3 S4" />
                                         </layoutData>
@@ -108,7 +112,7 @@
                             </f:FormElement>
                             <f:FormElement label="Country">
                                 <f:fields>
-                                    <Select id="country" selectedKey="{Country}" items="{/mDataCountry}">
+                                    <Select id="country" selectedKey="{/mCarrierSelected/Country}" items="{/mDataCountry}">
                                         <items>
                                             <core:Item text="{name}" key="{key}"/>
                                         </items>
@@ -117,17 +121,17 @@
                             </f:FormElement>                            
                             <f:FormElement label="Tel.">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Tel"/>
+                                    <Input value="{/mCarrierSelected/Tel}" type="Tel"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="Contact">
                                 <f:fields>
-                                    <Input value="{Tel}"/>
+                                    <Input value="{/mCarrierSelected/Contact}"/>
                                 </f:fields>
                             </f:FormElement>
                             <f:FormElement label="EMail">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Email"/>
+                                    <Input value="{/mCarrierSelected/Email}" type="Email"/>
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>
@@ -136,16 +140,7 @@
                         <f:formElements>
                             <f:FormElement label="Number Of Vans">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Number">
-                                    <layoutData>
-                                            <l:GridData span="XL2 L2 M2 S4" />
-                                        </layoutData>
-                                    </Input>
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="Number Of Vans">
-                                <f:fields>
-                                    <Input value="{Tel}" type="Integer">
+                                    <Input value="{/mCarrierSelected/Vans}" type="Number">
                                     <layoutData>
                                             <l:GridData span="XL2 L2 M2 S4" />
                                         </layoutData>
@@ -154,16 +149,34 @@
                             </f:FormElement>
                             <f:FormElement label="Number Of Refers">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Integer">
+                                    <Input value="{/mCarrierSelected/Refers}" type="Integer">
                                     <layoutData>
                                             <l:GridData span="XL2 L2 M2 S4" />
                                         </layoutData>
                                     </Input>
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Number Of StepDecks">
+                            <f:FormElement label="Number Of Flatbeds">
                                 <f:fields>
-                                    <Input value="{Tel}" type="Integer">
+                                    <Input value="{/mCarrierSelected/Flatbeds}" type="Integer">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Number Of Step Decks">
+                                <f:fields>
+                                    <Input value="{/mCarrierSelected/Decks}" type="Integer">
+                                    <layoutData>
+                                            <l:GridData span="XL2 L2 M2 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Other">
+                                <f:fields>
+                                    <Input value="{/mCarrierSelected/Other}" type="Integer">
                                     <layoutData>
                                             <l:GridData span="XL2 L2 M2 S4" />
                                         </layoutData>
@@ -187,7 +200,7 @@
                                     columnsXL="1">
                                     <f:content>
                                         <core:Title text="{i18n>Notes}"/>
-                                        <TextArea rows="3" value="{/mTripSelected/SpecialInstructions}" editable="true"/>
+                                        <TextArea rows="6" value="{/mCarrierSelected/Notes}" editable="true"/>
                                     </f:content>
                                 </f:SimpleForm>
                             </IconTabFilter>

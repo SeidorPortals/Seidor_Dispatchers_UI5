@@ -6,8 +6,8 @@ sap.ui.define([
 ], function (Controller, Util) {
 	"use strict";
 	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.DriversPage", {
-		ByD_Drivers : "/BYD_QA",
+    return Controller.extend("com.seidor.usa.dispatchers.controller.customer.CustomersPage", {
+		//ByD_Customers : "/BYD_QA",
 
         onInit: function () {},
 
@@ -19,8 +19,8 @@ sap.ui.define([
 		},
 
         onBackReport: function() {
-            this._getModel().setProperty("/mPropertyDrivers/vTabAll", true);
-            this._getModel().setProperty("/mPropertyDrivers/vTabCreate", false);
+            this._getModel().setProperty("/mPropertyCustomers/vTabAll", true);
+            this._getModel().setProperty("/mPropertyCustomers/vTabCreate", false);
         },
 
         onViewTrip: function () {
@@ -38,7 +38,7 @@ sap.ui.define([
                 "FEEDBACK_COMMENT" : this.byId("inpNameSupplierToll").getValue()
             };
 
-            this.oModel.getProperty(this.mDataDrivers).push(newClient);
+            this.oModel.getProperty(this.mDataCustomers).push(newClient);
             this.oModel.refresh(true);
         },
 
@@ -47,7 +47,7 @@ sap.ui.define([
 
             jQuery.ajax({
                 async: false,
-                url: `${this.ByD_Drivers}/createdrivers/DriversRootCollection?$format=json`,
+                url: `${this.ByD_Customers}/createCustomers/CustomersRootCollection?$format=json`,
                 method: "GET",
                 dataType : "json",
                 success: function (oData) {

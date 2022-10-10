@@ -7,31 +7,31 @@ sap.ui.define([
 ], function(Controller, Util, JSONModel, Filter, MessageBox){
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.carriers.AllCarriers", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trailer.AllTrailer", {
         onInit: function () {
         },
 
-        onCreateCarrier: function() {
-            this._getModel().setProperty("/mCarrierSelected",[]);
-            this._getModel().setProperty("/mPropertyCarriers/vTabAll", false);
-            this._getModel().setProperty("/mPropertyCarriers/vTabCreate", true);
+        onCreateTrailer: function() {
+            this._getModel().setProperty("/mTrailerSelected",[]);
+            this._getModel().setProperty("/mPropertyTrailers/vTabAll", false);
+            this._getModel().setProperty("/mPropertyTrailers/vTabCreate", true);
         },
 
-        onEditCarrier: function() {
+        onEditTrailer: function() {
             debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllCarriers").getSelectedIndex();
+            let _itemSelected = this.byId("tAllTrailers").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllCarriers").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mCarrierSelected",oModel.getProperty("/mDataCarriers")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyCarriers/vTabAll", false);
-                oModel.setProperty("/mPropertyCarriers/vTabCreate", true);
+                let _itemsTable = this.byId("tAllTrailers").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mTrailerSelected",oModel.getProperty("/mDataTrailers")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyTrailers/vTabAll", false);
+                oModel.setProperty("/mPropertyTrailers/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            
         },
 
-        onCopyCarrier: function() {
+        onCopyTrailer: function() {
             console.log("Medoto Copy");
         },
 

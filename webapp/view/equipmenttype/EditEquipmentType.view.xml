@@ -1,0 +1,45 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.equipmenttype.EditEquipmentType" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <Page showHeader="false">
+            <Toolbar id="idToolbar">
+                <Button id="idBtnBkNvoPeaje" type="Back" press="onBackReport"/>
+                <Text text="EquipmentType" />
+                <ToolbarSpacer  id="idTS2"/>
+                <Button id="btnSaveEquipmentType" icon="sap-icon://save" press="onSaveEquipmentType" visible="true"/>
+                <Button id="btnCancelEditEquipmentType" icon="sap-icon://reset" press="onCancelEditEquipmentType" visible="true"/>
+            </Toolbar>
+            <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+                <f:Form id="FormChange480_12120" editable="true">
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0"
+                            emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="2" singleContainerFullSize="false"/>
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer title="General Informartion">
+                        <f:formElements>
+                            <f:FormElement label="EquipmentType ID">
+                                <f:fields>
+                                    <Input value="{/mEquipmentTypeSelected/ID}" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement label="Name">
+                                <f:fields>
+                                    <Input value="{/mEquipmentTypeSelected/Description}" id="ca_name"/>
+                                </f:fields>
+                            </f:FormElement>     
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+                </f:Form>
+            </VBox>
+        </Page>
+    </App>
+</mvc:View>

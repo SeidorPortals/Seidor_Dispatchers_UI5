@@ -7,31 +7,31 @@ sap.ui.define([
 ], function(Controller, Util, JSONModel, Filter, MessageBox){
     'use strict';
 
-    return Controller.extend("com.seidor.usa.dispatchers.controller.carriers.AllCarriers", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.consignee.AllConsignee", {
         onInit: function () {
         },
 
-        onCreateCarrier: function() {
-            this._getModel().setProperty("/mCarrierSelected",[]);
-            this._getModel().setProperty("/mPropertyCarriers/vTabAll", false);
-            this._getModel().setProperty("/mPropertyCarriers/vTabCreate", true);
+        onCreateConsignee: function() {
+            this._getModel().setProperty("/mConsigneeSelected",[]);
+            this._getModel().setProperty("/mPropertyConsignee/vTabAll", false);
+            this._getModel().setProperty("/mPropertyConsignee/vTabCreate", true);
         },
 
-        onEditCarrier: function() {
+        onEditConsignee: function() {
             debugger;
             let oModel = this._getModel();
-            let _itemSelected = this.byId("tAllCarriers").getSelectedIndex();
+            let _itemSelected = this.byId("tAllConsignee").getSelectedIndex();
             if(_itemSelected !== -1){
-                let _itemsTable = this.byId("tAllCarriers").getBindingInfo("rows").binding.aIndices;
-                oModel.setProperty("/mCarrierSelected",oModel.getProperty("/mDataCarriers")[_itemsTable[_itemSelected]]);
-                oModel.setProperty("/mPropertyCarriers/vTabAll", false);
-                oModel.setProperty("/mPropertyCarriers/vTabCreate", true);
+                let _itemsTable = this.byId("tAllConsignee").getBindingInfo("rows").binding.aIndices;
+                oModel.setProperty("/mConsigneeSelected",oModel.getProperty("/mDataConsignee")[_itemsTable[_itemSelected]]);
+                oModel.setProperty("/mPropertyConsignee/vTabAll", false);
+                oModel.setProperty("/mPropertyConsignee/vTabCreate", true);
             }else{
                 MessageBox.warning("Select a record.")
             }            
         },
 
-        onCopyCarrier: function() {
+        onCopyConsignee: function() {
             console.log("Medoto Copy");
         },
 
