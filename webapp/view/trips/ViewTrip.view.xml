@@ -18,7 +18,7 @@
                     <Button id="btnPreviousTrip" icon="sap-icon://media-reverse" press="onPreviousAndNextTrip('previous')" type="Default" tooltip="{i18n>before}"/>
                     <Button id="btnNextTrip" icon="sap-icon://media-play" press="onPreviousAndNextTrip('next')" type="Default" tooltip="{i18n>next}"/>
                 </Toolbar>
-                <Panel id="pTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo} {/mTripSelected/ID}">
+                <Panel id="pTripInformation" class="sapUiSmallMargin" headerText="{i18n>tripInfo} {/mTripSelected/ID} \ Trip Status: {/mTripSelected/TripStatus} - Payment Status: {/mTripSelected/PaymentStatus}">
                     <f:SimpleForm id="sfViewTrip"
                         editable="false"
                         layout="ColumnLayout"
@@ -54,24 +54,28 @@
                             <Text text="{/mTripSelected/Temperature}"/>
                         </f:content>
                     </f:SimpleForm>
+                    <f:SimpleForm id="sfSecondCarrier"
+                        editable="false"
+                        layout="ColumnLayout"
+                        showHeader="false"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="4">
+                        <f:content>
+                            <core:Title text="{i18n>secondCarrier}"/>
+                            <Label text="{i18n>driver}" />
+                            <Text text="{/mTripSelected/Driver}"/>
+                            <Label text="{i18n>truck}" />
+                            <Text text="{/mTripSelected/Carrier}"/>
+                            <Label text="{i18n>trailer}" />
+                            <Text text="{/mTripSelected/Trailer}"/>
+                            <Label text="{i18n>phoneDriver}" />
+                            <Text text="{/mTripSelected/DispatcherDriverPhone}"/>
+                        </f:content>
+                    </f:SimpleForm>
                 </Panel>
                 <Panel id="pShipments" class="sapUiSmallMargin" headerText="{i18n>shipments}">
                     <table:Table id="tShipmentsTrips" rows="{/mTripSelected/Shipments}" visibleRowCount="{= ${/mTripSelected/Shipments}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
-                        <table:extension>
-                            <!--OverflowToolbar id="idOTShipments">
-                                <ToolbarSpacer id="idTSShipments"/>
-                                <Button id="idBtnAddShipments" icon="sap-icon://add" press="onCreateShipments" tooltip="Add">
-                                    <layoutData>
-                                        <OverflowToolbarLayoutData id="idOTLAddShipments" priority="NeverOverflow"/>
-                                    </layoutData>
-                                </Button>
-                                <Button id="idBtnEditShipments" icon="sap-icon://edit" press="onEditShipments" tooltip="Edit" visible="false">
-                                    <layoutData>
-                                        <OverflowToolbarLayoutData id="idOTLEditShipments" priority="NeverOverflow"/>
-                                    </layoutData>
-                                </Button>
-                            </OverflowToolbar-->
-                        </table:extension>
                         <table:noData>
                             <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
                         </table:noData>
@@ -106,6 +110,12 @@
                                     <Text text="{CityTo}"/>
                                 </table:template>
                             </table:Column>
+                            <table:Column filterProperty="Cost">
+                                <Label id="idLabelCost" text="Cost"/>
+                                <table:template>
+                                    <Text text="{Cost}"/>
+                                </table:template>
+                            </table:Column>
                             <table:Column filterProperty="Revenue">
                                 <Label id="idLabelRevenue" text="Revenue"/>
                                 <table:template>
@@ -122,6 +132,12 @@
                                 <Label id="idLabelDeliveryDate" text="Delivery Date"/>
                                 <table:template>
                                     <Text text="{DeliveryDate}"/>
+                                </table:template>
+                            </table:Column>
+                            <table:Column>
+                                <Label id="idLabelDoc" text="Document"/>
+                                <table:template>
+                                    <Button icon="sap-icon://document-text" press="onShowDocumentShipment" class="sapUiSmallMarginEnd"/>
                                 </table:template>
                             </table:Column>
                         </table:columns>
@@ -158,6 +174,26 @@
                                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
                                     </table:noData>
                                 </table:Table>
+                            </IconTabFilter>
+                            <IconTabFilter text="{i18n>system}" key="info">
+                                <f:SimpleForm id="sfSystemInformation"
+                                    editable="false"
+                                    layout="ColumnLayout"
+                                    showHeader="false"
+                                    columnsM="2"
+                                    columnsL="3"
+                                    columnsXL="4">
+                                    <f:content>
+                                        <Label text="{i18n>createBy}"/>
+                                        <Text text="{/mTripSelected/CreateBy}"/>
+                                        <Label text="{i18n>createFrom}"/>
+                                        <Text text="{/mTripSelected/CreateOn}"/>
+                                        <Label text="{i18n>updateBy}"/>
+                                        <Text text="{/mTripSelected/ChangeBy}"/>
+                                        <Label text="{i18n>updateFrom}"/>
+                                        <Text text="{/mTripSelected/ChangeOn}"/>
+                                    </f:content>
+                                </f:SimpleForm>
                             </IconTabFilter>
                         </items>
                     </IconTabBar>

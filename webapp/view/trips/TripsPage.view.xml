@@ -1,5 +1,5 @@
 <mvc:View 
-	controllerName="com.seidor.usa.dispatchers.controller.TripsPage" 
+	controllerName="com.seidor.usa.dispatchers.controller.trips.TripsPage" 
 	xmlns:core="sap.ui.core" 
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:table="sap.ui.table" 

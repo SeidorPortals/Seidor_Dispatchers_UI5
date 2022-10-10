@@ -52,6 +52,27 @@
                             <Input id="inpTemperature" value="{/mTripSelected/Temperature}"/>
                         </f:content>
                     </f:SimpleForm>
+                    <f:SimpleForm id="sfSecondCarrierForm"
+                        editable="false"
+                        layout="ColumnLayout"
+                        showHeader="false"
+                        columnsM="2"
+                        columnsL="3"
+                        columnsXL="4">
+                        <f:content>
+                            <core:Title text="{i18n>secondCarrier}"/>
+                            <Label text="{i18n>secondCarrier}" />
+                            <Input id="inpIdSecondCarrier" text="{/mTripSelected/SecondCarrier}"/>
+                            <Label text="{i18n>driver}" />
+                            <Input id="inpDriverSecondCarrier" text="{/mTripSelected/Driver}"/>
+                            <Label text="{i18n>truck}" />
+                            <Input id="inpTruckSecondCarrier" text="{/mTripSelected/Carrier}"/>
+                            <Label text="{i18n>trailer}" />
+                            <Input id="inpTrailerSecondCarrier" text="{/mTripSelected/Trailer}"/>
+                            <Label text="{i18n>phoneDriver}" />
+                            <Input id="inpPhoneSecondCarrier" text="{/mTripSelected/DispatcherDriverPhone}"/>
+                        </f:content>
+                    </f:SimpleForm>
                 </Panel>
                 <Panel id="pShipments" class="sapUiSmallMargin" headerText="{i18n>shipments}">
                     <table:Table id="tShipmentsTrips" rows="{/mTripSelected/Shipments}" visibleRowCount="{= ${/mTripSelected/Shipments}.length}" selectionMode="single" selectionBehavior="RowOnly" ariaLabelledBy="title">
@@ -104,6 +125,12 @@
                                     <Text text="{CityTo}"/>
                                 </table:template>
                             </table:Column>
+                            <table:Column filterProperty="Cost">
+                                <Label id="idLabelCost" text="Cost"/>
+                                <table:template>
+                                    <Text text="{Cost}"/>
+                                </table:template>
+                            </table:Column>
                             <table:Column filterProperty="Revenue">
                                 <Label id="idLabelRevenue" text="Revenue"/>
                                 <table:template>
@@ -146,7 +173,7 @@
                                         <core:Title text="{i18n>generalNotes}"/>
                                         <TextArea rows="3" value="{/mTripSelected/GeneralNotes}"/>
                                         <Label text="{i18n>agentEmail}"/>
-                                        <Input id="inpAgentEmail" value="{/mTripSelected/AgentEmail}"/>
+                                        <Text id="inpAgentEmail" value="{/mTripSelected/AgentEmail}"/>
                                     </f:content>
                                 </f:SimpleForm>
                             </IconTabFilter>

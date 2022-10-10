@@ -2,7 +2,7 @@
     xmlns = "sap.m"
     xmlns:core = "sap.ui.core"
     xmlns:f = "sap.ui.layout.form">
-    <Dialog id="dShowFragmentCarrierCost" class="sapUiSizeCompact" title="Carrier Cost Data {/mCarrierCostSelected/IdCarrierCost}" contentHeight="70%" contentWidth="40%">
+    <Dialog id="dShowFragmentCarrierCost" class="sapUiSizeCompact" title="Carrier Cost Data {/mCarrierCostSelected/IdCarrierCost}" contentHeight="25%" contentWidth="40%">
         <VBox>
             <f:SimpleForm layout="ColumnLayout" columnsM="2" columnsL="2" columnsXL="2">
                 <f:content>

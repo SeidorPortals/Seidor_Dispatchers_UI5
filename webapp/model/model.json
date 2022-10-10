@@ -19,7 +19,8 @@
             "title" : "Master Data",
             "icon": "sap-icon://instance",
             "visible" : true,
-            "items" : [{
+            "items" : [
+                {
                     "title" : "Trailer",
                     "key" : "trailerPage",
                     "icon": "sap-icon://instance"
@@ -106,6 +107,9 @@
             "ChangeBy" : "User 2",
             "ChangeOn" : "2022-01-20 01:15:00",
             "Error" : "ERROR DATA BYD", 
+            "TripStatus" : "Active",
+            "PaymentStatus" : "None",
+            "SecondCarrier" : "",
             "Shipments" : [
                 {
                     "Number" : "10223882002101",

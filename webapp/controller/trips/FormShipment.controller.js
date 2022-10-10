@@ -15,7 +15,7 @@ sap.ui.define([
             this.oModel.setProperty("/mPropertyTrips/vTabShipmentCreate", false);
         },   
         onViewPickup: function(oEvent) {
-            const _pickupSelected = this.oModel.getProperty("/mShipmentSelected/PickUp").find(x => x.IdPickup === oEvent.getSource().getProperty("text"));
+            const _pickupSelected = this.oModel.getProperty("/mShipmentSelected/PickUp").find(x => x.Shipper === oEvent.getSource().getProperty("text"));
             if(_pickupSelected === undefined) {
                 MessageBox.error("No Found Data.");
             }else{
@@ -24,7 +24,7 @@ sap.ui.define([
             }
         },
         onViewDelivery: function(oEvent){
-            const _deliverySelected = this.oModel.getProperty("/mShipmentSelected/Delivery").find(x => x.IdDelivery === oEvent.getSource().getProperty("text"));
+            const _deliverySelected = this.oModel.getProperty("/mShipmentSelected/Delivery").find(x => x.Consignee === oEvent.getSource().getProperty("text"));
             if(_deliverySelected === undefined){
                 MessageBox.error("No Found Data.");
             }else{
@@ -33,7 +33,7 @@ sap.ui.define([
             }
         },
         onViewCarrierCost: function(oEvent) {
-            const _carrierCostSelected = this.oModel.getProperty("/mShipmentSelected/CarrierCost").find(x => x.IdCarrierCost === oEvent.getSource().getProperty("text"));
+            const _carrierCostSelected = this.oModel.getProperty("/mShipmentSelected/CarrierCost").find(x => x.Category === oEvent.getSource().getProperty("text"));
             if(_carrierCostSelected === undefined){
                 MessageBox.error("No Found Data.");
             }else{

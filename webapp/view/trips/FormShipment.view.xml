@@ -29,14 +29,12 @@
                         <Input id="inpCustomer" text="{/mShipmentSelected/Customer}"/>
                         <Label text="{i18n>bilingEmail}" />
                         <Input id="inpCustomerEmail" text="{/mShipmentSelected/CustomerEmail}"/>
-                        <Label text="{i18n>carrier}" />
-                        <Input id="inpCarrierEmail" text="{/mShipmentSelected/CustomerEmail}"/>
                         <Label text="{i18n>customerPo}" />
                         <Input id="inpCustomerPo" text="{/mShipmentSelected/CustomerPo}"/>
                         <Label text="{i18n>carrier}" />
                         <Input id="inpCarrier" text="{/mTripSelected/Carrier}"/>
-                        <Label text="{i18n>notificationEmail}" />
-                        <Input id="inpCarrierNotificationEmail" text="{/mTripSelected/CarrierNotificationEmail}"/>
+                        <Label text="{i18n>customerNotificationEmail}" />
+                        <Input id="inpCarrierNotificationEmail" text="{/mTripSelected/CustomerEmail}"/>
                         <Label text="{i18n>pieces}" />
                         <Input id="inpPieces" text="{/mShipmentSelected/Pieces}"/>
                         <Label text="{i18n>weigth}" />
@@ -65,16 +63,10 @@
                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
                     </table:noData>
                     <table:columns>
-                        <table:Column width="auto" filterProperty="IdPickup">
-                            <Label text="{i18n>pickup}"/>
-                            <table:template>
-                                <Link text="{IdPickup}" press="onViewPickup"/>
-                            </table:template>
-                        </table:Column>
                         <table:Column width="auto" filterProperty="Shipper">
                             <Label text="{i18n>shipper}"/>
                             <table:template>
-                                <Text text="{Shipper}"/>
+                                <Link text="{Shipper}" press="onViewPickup"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto">
@@ -122,16 +114,10 @@
                         </OverflowToolbar>
                     </table:extension>
                     <table:columns>
-                        <table:Column width="auto" filterProperty="IdDelivery">
-                            <Label text="{i18n>delivery}"/>
+                        <table:Column width="auto" filterProperty="Consignee">
+                            <Label text="{i18n>consignee}"/>
                             <table:template>
-                                <Link text="{IdDelivery}" press="onViewDelivery"/>
-                            </table:template>
-                        </table:Column>
-                        <table:Column width="auto">
-                            <Label text="{i18n>Pcs}"/>
-                            <table:template>
-                                <Text text="{Shipper}"/>
+                                <Link text="{Consignee}" press="onViewDelivery"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto">
@@ -164,6 +150,18 @@
                                 <Text text="{SingBy}"/>
                             </table:template>
                         </table:Column>
+                        <table:Column>
+                            <Label id="idLabelDoc" text="POD"/>
+                            <table:template>
+                                <Button icon="sap-icon://document-text" press="onShowDocumentDelivery" class="sapUiSmallMarginEnd"/>
+                            </table:template>
+                        </table:Column>
+                        <table:Column>
+                            <Label text="Create By"/>
+                            <table:template>
+                                <Text text="{UserDoc}"/>
+                            </table:template>
+                        </table:Column>
                     </table:columns>
                 </table:Table>
             </Panel>
@@ -188,16 +186,10 @@
                         <Link class="sapUiMediumMargin" text="{i18n>noData}"/>
                     </table:noData>
                     <table:columns>
-                        <table:Column width="auto" filterProperty="IdCarrierCost">
-                            <Label text="{i18n>carrierCost}"/>
-                            <table:template>
-                                <Link text="{IdCarrierCost}" press="onViewCarrierCost"/>
-                            </table:template>
-                        </table:Column>
                         <table:Column width="auto" filterProperty="Category">
                             <Label text="{i18n>category}"/>
                             <table:template>
-                                <Text text="{Category}"/>
+                                <Link text="{Category}" press="onViewCarrierCost"/>
                             </table:template>
                         </table:Column>
                         <table:Column width="auto" filterProperty="Amount">

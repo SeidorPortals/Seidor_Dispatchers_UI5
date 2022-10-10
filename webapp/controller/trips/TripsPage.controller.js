@@ -7,7 +7,7 @@ sap.ui.define([
 ], function (Controller, Util, JSONModel, Filter, MessageBox) {
 	"use strict";
 	
-    return Controller.extend("com.seidor.usa.dispatchers.controller.TripsPage", {
+    return Controller.extend("com.seidor.usa.dispatchers.controller.trips.TripsPage", {
 		ByDCarrier : "/BYD_QA",
 
         onInit: function () {},

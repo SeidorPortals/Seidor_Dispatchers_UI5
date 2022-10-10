@@ -41,7 +41,7 @@
 						<mvc:XMLView id="idXMLVPage1" viewName="com.seidor.usa.dispatchers.view.InitialPage"/>
 					</ScrollContainer>
                     <ScrollContainer id="tripsPage" horizontal="true" vertical="true" height="100%">
-						<mvc:XMLView id="idXMLVPage2" viewName="com.seidor.usa.dispatchers.view.TripsPage"/>
+						<mvc:XMLView id="idXMLVPage2" viewName="com.seidor.usa.dispatchers.view.trips.TripsPage"/>
 					</ScrollContainer>
                     <ScrollContainer id="carriersPage" horizontal="true" vertical="true" height="100%">
 						<mvc:XMLView id="idXMLVPage3" viewName="com.seidor.usa.dispatchers.view.CarriersPage"/>
