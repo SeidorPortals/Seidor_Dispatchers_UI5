@@ -194,9 +194,6 @@
         "edit" : false
     },
     
-    "mDataCarriers" : [],
-    "mCarrierSelected" : {
-    },
     "mDataDrivers" : [
         {
             "CBP_UUID" : "1000733",
