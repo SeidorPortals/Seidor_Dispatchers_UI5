@@ -1,0 +1,26 @@
+<mvc:View 
+	controllerName="com.seidor.usa.dispatchers.controller.DriversPage" 
+	xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:table="sap.ui.table" 
+	xmlns:l="sap.ui.layout" 
+	xmlns:f="sap.ui.layout.form" 
+	xmlns="sap.m" 
+	class="sapUiSizeCompact">
+    <App>
+        <pages>
+			<Page id="idPage" title="Drivers">
+                <IconTabBar id="idIconTabBarDrivers" class="sapUiContentPadding" expandable="false">
+                    <items>
+                        <IconTabFilter id="idTabAllDrivers" icon="sap-icon://instance" visible="{/mPropertyDrivers/vTabAll}">
+                            <mvc:XMLView id="xmlViewAllDrivers" viewName="com.seidor.usa.dispatchers.view.drivers.AllDrivers"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="idTabCreateDrivers" icon="sap-icon://create-form" visible="{/mPropertyDrivers/vTabCreate}">
+                            <mvc:XMLView id="xmlViewEditDrivers" viewName="com.seidor.usa.dispatchers.view.drivers.EditDrivers"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+			</Page>
+		</pages>
+    </App>
+</mvc:View>
