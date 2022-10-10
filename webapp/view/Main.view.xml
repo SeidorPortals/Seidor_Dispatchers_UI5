@@ -61,6 +61,9 @@
                     <ScrollContainer id="commodityPage" horizontal="true" vertical="true" height="100%">
 						<mvc:XMLView id="idXMLVPage8" viewName="com.seidor.usa.dispatchers.view.commodity.CommodityPage"/>
 					</ScrollContainer>                    
+                    <ScrollContainer id="driversPage" horizontal="true" vertical="true" height="100%">
+						<mvc:XMLView id="idXMLVPage4" viewName="com.seidor.usa.dispatchers.view.DriversPage"/>
+					</ScrollContainer>
 				</pages>
 			</NavContainer>
 		</tnt:mainContents>
