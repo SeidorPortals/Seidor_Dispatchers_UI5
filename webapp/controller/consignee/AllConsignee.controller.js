@@ -12,6 +12,7 @@ sap.ui.define([
         },
 
         onCreateConsignee: function() {
+            this._getModel().setProperty("/mConsigneeSelected",[]);
             this._getModel().setProperty("/mPropertyConsignee/vTabAll", false);
             this._getModel().setProperty("/mPropertyConsignee/vTabCreate", true);
         },

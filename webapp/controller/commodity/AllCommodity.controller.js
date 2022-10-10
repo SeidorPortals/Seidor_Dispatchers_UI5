@@ -12,6 +12,7 @@ sap.ui.define([
         },
 
         onCreateCommodity: function() {
+            this._getModel().setProperty("/mCommoditySelected",[]);
             this._getModel().setProperty("/mPropertyCommodity/vTabAll", false);
             this._getModel().setProperty("/mPropertyCommodity/vTabCreate", true);
         },

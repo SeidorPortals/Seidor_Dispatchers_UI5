@@ -12,6 +12,7 @@ sap.ui.define([
         },
 
         onCreateCarrier: function() {
+            this._getModel().setProperty("/mCarrierSelected",[]);
             this._getModel().setProperty("/mPropertyCarriers/vTabAll", false);
             this._getModel().setProperty("/mPropertyCarriers/vTabCreate", true);
         },

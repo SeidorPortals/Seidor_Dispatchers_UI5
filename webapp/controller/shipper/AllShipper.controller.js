@@ -12,6 +12,7 @@ sap.ui.define([
         },
 
         onCreateShipper: function() {
+            this._getModel().setProperty("/mShipperSelected",[]);
             this._getModel().setProperty("/mPropertyShipper/vTabAll", false);
             this._getModel().setProperty("/mPropertyShipper/vTabCreate", true);
         },
