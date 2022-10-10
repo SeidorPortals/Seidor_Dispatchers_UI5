@@ -15,12 +15,6 @@
             "icon": "sap-icon://account",
             "key": "carriersPage",
             "visible" : true
-        },
-        {
-            "title": "Drivers",
-            "icon": "sap-icon://account",
-            "key": "driversPage",
-            "visible" : true
         },{
             "title" : "Master Data",
             "icon": "sap-icon://instance",
